@@ -1,0 +1,416 @@
+<!-- =======================
+  WEDDING INVITE (3 blocks)
+  Updates:
+  - All body text (captions + paragraph) switched to Montserrat
+    (headings stay Playfair; date in block 2 stays Caveat)
+  - Calendar circle color = same as block-2 date color (#c14a63)
+  - Block 3 grey background is limited to the calendar "card" width (not full width)
+======================= -->
+
+<div class="wsite">
+
+  <!-- ===== 1) POLAROIDS ===== -->
+  <section class="wpol" aria-label="Wedding hero">
+    <div class="wpol-wrap">
+      <div class="wpol-top">МЫ ЖЕНИМСЯ!</div>
+
+      <div class="wpol-row">
+        <div class="pol pol-left">
+          <div class="pol-img">
+            <img
+              src="https://lh3.googleusercontent.com/d/1RBTVBDa9AmtKIedUfVNzfODmVkRpmxn-"
+              alt="Photo left"
+            />
+          </div>
+          <div class="pol-cap">— интересно, кто будет моим мужем, когда я вырасту?</div>
+        </div>
+
+        <div class="wpol-date" aria-label="Wedding date">
+          <div class="d">19</div>
+          <div class="d">06</div>
+          <div class="d">26</div>
+        </div>
+
+        <div class="pol pol-right">
+          <div class="pol-img">
+            <img
+              src="https://lh3.googleusercontent.com/d/15zfMUlzAaFdITExtpttxoQ0yGOy1SQgR"
+              alt="Photo right"
+            />
+          </div>
+          <div class="pol-cap">— им буду я 🤍</div>
+        </div>
+      </div>
+
+      <div class="wpol-names" aria-label="Names">
+        <div class="name">ЕЛИЗАВЕТА</div>
+        <div class="plus">+</div>
+        <div class="name">СЕРГЕЙ</div>
+      </div>
+
+      <div class="wpol-date-line" aria-label="Wedding date (mobile)">
+        19 / 06 / 26
+      </div>
+    </div>
+  </section>
+
+  <div class="wgap" aria-hidden="true"></div>
+
+  <!-- ===== 2) TEXT INVITE ===== -->
+  <section class="winvite" aria-label="Invitation text">
+    <div class="winvite-wrap">
+      <div class="winvite-text">
+        Дорогие наши родные и друзья! <br><br>
+        Мы приглашаем вас разделить с нами наше свадебное торжество,
+        которое состоится
+      </div>
+      <div class="winvite-date">19.06.2026 в 15:00</div>
+    </div>
+  </section>
+
+  <div class="wgap wgap--sm" aria-hidden="true"></div>
+
+  <!-- ===== 3) CALENDAR (card-limited background) ===== -->
+  <section class="wcal" aria-label="Calendar">
+    <div class="wcal-card">
+      <div class="wcal-wrap">
+        <div class="wcal-month">ИЮНЬ</div>
+
+        <div class="weekdays">
+          <div>ПН</div><div>ВТ</div><div>СР</div>
+          <div>ЧТ</div><div>ПТ</div><div>СБ</div><div>ВС</div>
+        </div>
+
+        <div class="days">
+          <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+          <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+          <div>15</div><div>16</div><div>17</div><div>18</div>
+          <div class="highlight">19</div>
+          <div>20</div><div>21</div>
+          <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div>
+          <div>29</div><div>30</div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600&family=Caveat:wght@600&display=swap');
+
+  .wsite{
+    --bg:#f3f3f3;
+    --text:#1b1b1b;
+    --muted:#8a8a8a;
+    --frame:#ffffff;
+    --shadow:0 16px 34px rgba(0,0,0,.16);
+    --accent:#c14a63; /* date color in block 2 */
+    width:100%;
+    color:var(--text);
+    font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  }
+  .wsite *{ box-sizing:border-box; }
+
+  .wgap{ height: 34px; }
+  .wgap--sm{ height: 26px; }
+
+  /* =======================
+     1) POLAROIDS
+  ======================= */
+  .wpol{
+    width:100%;
+    background:var(--bg);
+    border-radius:18px;
+    overflow:hidden;
+    background-image:
+      radial-gradient(circle at 10% 15%, rgba(0,0,0,0.035), transparent 35%),
+      radial-gradient(circle at 80% 30%, rgba(0,0,0,0.03), transparent 40%),
+      radial-gradient(circle at 45% 85%, rgba(0,0,0,0.03), transparent 45%),
+      linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+  }
+
+  .wpol-wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:60px 22px 60px;
+    text-align:center;
+  }
+
+  /* heading stays Montserrat (as in your design), ok */
+  .wpol-top{
+    letter-spacing:.22em;
+    font-weight:400;
+    font-size:14px;
+    opacity:.9;
+    margin-bottom:60px;
+    text-transform:uppercase;
+  }
+
+  .wpol-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:46px;
+    flex-wrap:nowrap;
+  }
+
+  /* heading-ish date stays Playfair */
+  .wpol-date{
+    width:150px;
+    text-align:center;
+    color:var(--muted);
+    font-family:"Playfair Display", Georgia, serif;
+    font-weight:500;
+    line-height:1;
+    user-select:none;
+  }
+  .wpol-date .d{
+    font-size:54px;
+    opacity:.9;
+    margin: 10px 0;
+  }
+
+  .pol{
+    width:min(270px, 42vw);
+    background:var(--frame);
+    padding:14px 14px 12px;
+    border-radius:6px;
+    box-shadow:var(--shadow);
+  }
+  .pol-left{ transform: rotate(-8deg) translateY(-16px); }
+  .pol-right{ transform: rotate(7deg) translateY(10px); }
+
+  .pol-img{
+    width:100%;
+    aspect-ratio:1/1;
+    border-radius:4px;
+    overflow:hidden;
+    background:#e9e9e9;
+  }
+  .pol img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  /* captions now Montserrat */
+  .pol-cap{
+    margin-top:9px;
+    min-height:24px;
+    font-size:13px;
+    color:#2a2a2a;
+    opacity:.92;
+    text-align:left;
+  }
+
+  /* Names stay Playfair (headline) */
+  .wpol-names{
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:22px;
+    margin-top:40px;
+    white-space:nowrap;
+  }
+  .wpol-names .name{
+    font-family:"Playfair Display", Georgia, serif;
+    font-weight:500;
+    letter-spacing:.06em;
+    font-size: clamp(30px, 5vw, 62px);
+  }
+  .wpol-names .plus{
+    font-weight:300;
+    font-size: clamp(18px, 2.5vw, 28px);
+    color:var(--muted);
+    transform: translateY(-6px);
+    flex: 0 0 auto;
+  }
+
+  .wpol-date-line{
+    display:none;
+    margin-top:14px;
+    font-weight:400;
+    letter-spacing:0.14em;
+    color:#5f5f5f;
+    font-size:14px;
+  }
+
+  /* =======================
+     2) INVITE TEXT
+     - body text Montserrat
+     - date stays Caveat
+  ======================= */
+  .winvite{
+    width:100%;
+    padding: 40px 20px 40px;
+    text-align:center;
+  }
+  .winvite-wrap{
+    max-width:720px;
+    margin:0 auto;
+  }
+  .winvite-text{
+    font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: clamp(15px, 1.9vw, 22px);
+    line-height:1.6;
+    color:#3c3c3c;
+    letter-spacing:0.01em;
+  }
+  .winvite-date{
+    margin-top:18px;
+    font-family:"Caveat", cursive;
+    font-size: clamp(28px, 3.8vw, 50px);
+    color:var(--accent);
+    letter-spacing:0.05em;
+  }
+
+  /* =======================
+     3) CALENDAR
+     - background limited to card
+  ======================= */
+  .wcal{
+    width:100%;
+    padding:0 20px 40px; /* so card doesn't touch edges */
+  }
+
+  .wcal-card{
+    background:var(--bg);
+    border-radius:24px;
+    padding:28px 20px 36px;
+    max-width:560px;      /* limits grey background width */
+    margin:0 auto;          /* center it */
+  }
+
+  .wcal-wrap{
+    max-width:500px;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .wcal-month{
+    font-family:"Playfair Display", serif;
+    font-size:22px;
+    margin-bottom:25px;
+    letter-spacing:0.06em;
+    color:#3c3c3c;
+  }
+
+  .weekdays,
+  .days{
+    display:grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap:14px;
+    column-gap:6px;
+    max-width:420px;
+    margin:0 auto;
+  }
+  .weekdays div{
+    font-size:11px;
+    color:#9a9a9a;
+    letter-spacing:0.08em;
+  }
+  .days div{
+    font-size:14px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+
+  /* circle color matches accent */
+  .highlight::before{
+    content:"";
+    position:absolute;
+    width:28px;
+    height:28px;
+    border:1.4px solid var(--accent);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+  }
+
+  /* "Save the date" is a heading-style line -> Playfair stays */
+  .wcal-date{
+    font-family:"Montserrat", serif;
+    font-size:20px;
+    letter-spacing:0.03em;
+    margin-top:18px;
+    color:#2b2b2b;
+    white-space:nowrap;
+  }
+
+  /* =======================
+     Responsive
+  ======================= */
+  @media (max-width: 820px){
+    .wpol-row{ gap:28px; }
+    .pol{ width:min(230px, 38vw); }
+    .wpol-date{ width:120px; }
+    .wpol-date .d{ font-size:46px; }
+    .wpol-wrap{ padding:38px 18px 30px; }
+    .wgap{ height: 30px; }
+    .wgap--sm{ height: 22px; }
+    .wcal-card{ max-width:520px; }
+  }
+
+  @media (max-width: 560px){
+    .wpol-row{
+      position:relative;
+      gap:0;
+      justify-content:center;
+      align-items:flex-start;
+    }
+    .wpol-date{ display:none; }
+    .wpol-date-line{ display:block; }
+
+    .pol{
+      width: min(46vw, 220px);
+      padding:12px 12px 10px;
+    }
+    .pol-left{ transform: rotate(-7deg) translateY(-6px); z-index:1; }
+    .pol-right{ transform: rotate(6deg) translateY(8px); margin-left:-18px; z-index:2; }
+
+    .pol-cap{ font-size:12px; }
+
+    /* names fit one line */
+    .wpol-names{ gap:14px; }
+    .wpol-names .name{ font-size: clamp(20px, 6.2vw, 36px); }
+    .wpol-names .plus{ font-size: clamp(16px, 4.8vw, 22px); transform: translateY(-3px); }
+
+    /* save-the-date fits */
+    .wcal-date{
+      font-size: clamp(14px, 4.1vw, 18px);
+      letter-spacing: 0.02em;
+    }
+
+    .wgap{ height: 34px; }
+    .wgap--sm{ height: 26px; }
+
+    .winvite{ padding:8px 18px 4px; }
+    .wcal{ padding:0 14px; }
+    .wcal-card{ padding:24px 16px 28px; max-width:520px; }
+  }
+
+  @media (max-width: 360px){
+    .pol{ width:48vw; }
+    .pol-right{ margin-left:-14px; }
+    .wpol-date-line{ letter-spacing:0.12em; font-size:13px; }
+
+    .wpol-names .name{ font-size: clamp(18px, 6.6vw, 30px); }
+    .wpol-names .plus{ font-size: clamp(14px, 5.2vw, 20px); }
+
+    .weekdays, .days{ column-gap:4px; row-gap:12px; }
+    .days div{ height:26px; }
+    .highlight::before{ width:26px; height:26px; }
+
+    .wcal-date{ font-size: clamp(13px, 4.3vw, 16px); }
+    .wcal-card{ border-radius:20px; }
+  }
+</style>
