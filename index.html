@@ -74,34 +74,11 @@
 
   <div class="wgap wgap--sm" aria-hidden="true"></div>
 
-  <!-- ===== NEW) RSVP FORM ===== -->
-  <section class="wform" aria-label="RSVP form">
-    <div class="wform-card">
-      <div class="wform-title">Подтвердите присутствие</div>
-
-      <div class="wform-embed">
-        <iframe
-          class="wform-iframe"
-          src="https://docs.google.com/forms/d/e/1FAIpQLSc8PIfuGQh0vW2VMZR1k88vIn-YkcLolPuCEzirz4BUVf0AjA/viewform?embedded=true"
-          width="100%"
-          height="980"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          loading="lazy"
-          title="RSVP Google Form"
-        >Загрузка…</iframe>
-      </div>
-    </div>
-  </section>
-
-  <div class="wgap wgap--sm" aria-hidden="true"></div>
-
   <!-- ===== 3) CALENDAR (card-limited background) ===== -->
   <section class="wcal" aria-label="Calendar">
     <div class="wcal-card">
       <div class="wcal-wrap">
-        <div class="wcal-month">ИЮНЬ</div>
+        <div class="wcal-month">ИЮНЬ 2026</div>
 
         <div class="weekdays">
           <div>ПН</div><div>ВТ</div><div>СР</div>
@@ -119,8 +96,47 @@
         </div>
 
       </div>
+
+
     </div>
   </section>
+
+  <div class="wgap wgap--sm" aria-hidden="true"></div>
+
+  <!-- ===== 4) PLACE (no background) ===== -->
+  <section class="wplace" aria-label="Place">
+    <div class="wplace-wrap">
+      <div class="wplace-left">
+        <div class="wplace-top">МЕСТО ПРОВЕДЕНИЯ</div>
+
+        <div class="wplace-name">Ресторан NOVO, 2 этаж</div>
+        <div class="wplace-addr">Слобода печёры 110 а, Нижний Новгород, Россия</div>
+
+<div class="wplace-time">Сбор гостей в 15:00</div>
+
+<a
+  class="wplace-link"
+
+          href="https://yandex.com/maps/-/CPU150~S"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Как добраться
+        </a>
+      </div>
+
+      <div class="wplace-right" aria-label="Venue photo">
+        <div class="wplace-photo">
+          <img
+            src="https://lh3.googleusercontent.com/d/1mQgbh9PZK87VKRI5lSe-_BzlAIYJdw3s"
+            alt="Ресторан NOVO"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 </div>
 
@@ -430,6 +446,116 @@
     /* ✅ высота формы на мобилке */
     .wform-iframe{ height:1100px; }
   }
+
+  /* =======================
+     4) PLACE (no background)
+  ======================= */
+  .wplace{
+    width:100%;
+    padding: 18px 20px 18px;
+    background: transparent;
+  }
+
+  .wplace-wrap{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:46px;
+  }
+
+  .wplace-left{
+    flex: 1 1 520px;
+    min-width: 280px;
+  }
+
+  .wplace-top{
+    font-family:"Playfair Display", Georgia, serif;
+    font-weight:400;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#3c3c3c;
+    font-size: clamp(28px, 4.2vw, 56px);
+    margin-bottom:22px;
+  }
+
+  .wplace-name{
+    font-size: clamp(18px, 2.2vw, 30px);
+    line-height:1.35;
+    color:#3c3c3c;
+    margin-bottom:8px;
+  }
+
+  .wplace-addr{
+    font-size: clamp(14px, 1.7vw, 18px);
+    line-height:1.55;
+    color:#6b6b6b;
+    margin-bottom:18px;
+  }
+
+  .wplace-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    color: var(--accent);
+    text-decoration:none;
+    font-size:16px;
+    letter-spacing:0.02em;
+    padding:10px 14px;
+    border:1.4px solid rgba(193,74,99,.55);
+    border-radius:999px;
+    transition: transform .15s ease, background .15s ease;
+  }
+
+  .wplace-link:hover{
+    background: rgba(193,74,99,.06);
+    transform: translateY(-1px);
+  }
+
+  .wplace-right{
+    flex: 0 0 min(520px, 46vw);
+    display:flex;
+    justify-content:flex-end;
+  }
+
+  .wplace-photo{
+    width:100%;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow: var(--shadow);
+    background:#e9e9e9;
+  }
+
+  .wplace-photo img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:cover;
+  }
+.wplace-time{
+  margin-bottom:16px;
+  font-family:"Caveat", cursive;
+  font-size: clamp(24px, 3vw, 40px);
+  color: var(--accent);
+  letter-spacing:0.05em;
+}
+
+
+  /* ✅ адаптация блока места на планшете/мобилке */
+  @media (max-width: 780px){
+    .wplace-wrap{
+      flex-direction:column;
+      align-items:stretch;
+      gap:18px;
+    }
+    .wplace-right{
+      flex: 0 0 auto;
+      width:100%;
+    }
+  }
+
 </style>
 
 </body>
