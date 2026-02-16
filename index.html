@@ -8,7 +8,7 @@
 
 <body>
 <!-- =======================
-  WEDDING INVITE + RSVP FORM
+  WEDDING INVITE
 ======================= -->
 
 <div class="wsite">
@@ -74,7 +74,7 @@
 
   <div class="wgap wgap--sm" aria-hidden="true"></div>
 
-  <!-- ===== 3) CALENDAR (card-limited background) ===== -->
+  <!-- ===== 3) CALENDAR ===== -->
   <section class="wcal" aria-label="Calendar">
     <div class="wcal-card">
       <div class="wcal-wrap">
@@ -96,8 +96,6 @@
         </div>
 
       </div>
-
-
     </div>
   </section>
 
@@ -134,45 +132,45 @@
     </div>
   </section>
 
-<div class="wgap" aria-hidden="true"></div>
+  <div class="wgap" aria-hidden="true"></div>
 
-<!-- ===== 5) TIMING ===== -->
-<section class="wtiming" aria-label="Timing">
-  <div class="wtiming-wrap">
+  <!-- ===== 5) TIMING ===== -->
+  <section class="wtiming" aria-label="Timing">
+    <div class="wtiming-wrap">
 
-    <div class="wtiming-title">ТАЙМИНГ</div>
+      <div class="wtiming-title">ТАЙМИНГ</div>
 
-    <div class="wtimeline">
+      <div class="wtimeline">
 
-      <div class="wtimeline-item">
-        <div class="wtimeline-time">15:00</div>
-        <div class="wtimeline-text">Сбор гостей</div>
-      </div>
+        <div class="wtimeline-item">
+          <div class="wtimeline-time">15:00</div>
+          <div class="wtimeline-text">Сбор гостей</div>
+        </div>
 
-      <div class="wtimeline-item">
-        <div class="wtimeline-time">15:30</div>
-        <div class="wtimeline-text">Торжественная церемония</div>
-      </div>
+        <div class="wtimeline-item">
+          <div class="wtimeline-time">15:30</div>
+          <div class="wtimeline-text">Торжественная церемония</div>
+        </div>
 
-      <div class="wtimeline-item">
-        <div class="wtimeline-time">16:00</div>
-        <div class="wtimeline-text">Банкет</div>
-      </div>
+        <div class="wtimeline-item">
+          <div class="wtimeline-time">16:00</div>
+          <div class="wtimeline-text">Банкет</div>
+        </div>
 
-      <div class="wtimeline-item">
-        <div class="wtimeline-time">22:00</div>
-        <div class="wtimeline-text">Завершение вечера и дискотека</div>
-      </div>
+        <div class="wtimeline-item">
+          <div class="wtimeline-time">22:00</div>
+          <div class="wtimeline-text">Завершение вечера и дискотека</div>
+        </div>
 
-      <div class="wtimeline-item">
-        <div class="wtimeline-time">23:00</div>
-        <div class="wtimeline-text">After party</div>
+        <div class="wtimeline-item">
+          <div class="wtimeline-time">23:00</div>
+          <div class="wtimeline-text">After party</div>
+        </div>
+
       </div>
 
     </div>
-
-  </div>
-</section>
+  </section>
 
 </div>
 
@@ -202,31 +200,30 @@
   /* =======================
      1) POLAROIDS
   ======================= */
- .wpol{
-  width:100%;
-  padding: 20px 0 0px;
-  display:flex;
-  justify-content:center;
-}
+  .wpol{
+    width:100%;
+    padding: 20px 0 0;
+    display:flex;
+    justify-content:center;
+  }
 
   .wpol-wrap{
-  width:100%;
-  max-width:1100px;
-  margin:0 auto;
-  padding:60px 22px 60px;
-  text-align:center;
+    width:100%;
+    max-width:1100px;
+    margin:0 auto;
+    padding:60px 22px 60px;
+    text-align:center;
 
-  background:var(--bg);
-  border-radius:24px;
-  overflow:hidden;
+    background:var(--bg);
+    border-radius:24px;
+    overflow:hidden;
 
-  background-image:
-    radial-gradient(circle at 10% 15%, rgba(0,0,0,0.035), transparent 35%),
-    radial-gradient(circle at 80% 30%, rgba(0,0,0,0.03), transparent 40%),
-    radial-gradient(circle at 45% 85%, rgba(0,0,0,0.03), transparent 45%),
-    linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
-}
-
+    background-image:
+      radial-gradient(circle at 10% 15%, rgba(0,0,0,0.035), transparent 35%),
+      radial-gradient(circle at 80% 30%, rgba(0,0,0,0.03), transparent 40%),
+      radial-gradient(circle at 45% 85%, rgba(0,0,0,0.03), transparent 45%),
+      linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+  }
 
   .wpol-top{
     letter-spacing:.22em;
@@ -351,43 +348,6 @@
   }
 
   /* =======================
-     FORM
-  ======================= */
-  .wform{
-    width:100%;
-    padding:0 20px;
-    display:flex;
-    justify-content:center;
-  }
-  .wform-card{
-    width:100%;
-    max-width:760px;
-    background:var(--bg);
-    border-radius:24px;
-    padding:26px 18px 18px;
-  }
-  .wform-title{
-    font-family:"Playfair Display", serif;
-    font-size:22px;
-    letter-spacing:0.04em;
-    color:#3c3c3c;
-    text-align:center;
-    margin-bottom:14px;
-  }
-  .wform-embed{
-    width:100%;
-    border-radius:16px;
-    overflow:hidden;
-    background:#fff;
-  }
-  .wform-iframe{
-    display:block;
-    width:100%;
-    border:0;
-    height:980px; /* ✅ чтобы CSS задавал высоту по умолчанию */
-  }
-
-  /* =======================
      3) CALENDAR
   ======================= */
   .wcal{
@@ -453,159 +413,8 @@
     pointer-events:none;
   }
 
-/* =======================
-   5) TIMING — minimal elegant
-======================= */
-.wtiming{
-  width:100%;
-  padding: 30px 0 30px;
-  display:flex;
-  justify-content:center;
-}
-
-.wtiming-wrap{
-  max-width:720px;
-  margin:0 auto;
-}
-
-.wtiming-title{
-  font-family:"Playfair Display", serif;
-  font-weight:400;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-size: clamp(28px, 4vw, 56px);
-  margin-bottom:50px;
-  color:#2a2a2a;
-}
-
-.wtimeline{
-  display:flex;
-  flex-direction:column;
-  gap:40px;
-}
-
-.wtimeline-item{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-}
-
-.wtimeline-time{
-  font-family:"Caveat", cursive;
-  font-size: clamp(30px, 3vw, 46px);
-  color:var(--accent);
-  letter-spacing:.05em;
-  line-height:1;
-}
-
-.wtimeline-text{
-  font-size: clamp(14px, 1.8vw, 18px);
-  letter-spacing:.06em;
-  color:#3c3c3c;
-  line-height:1.4;
-}
-
-.wtiming-wrap{
-  width:100%;
-  max-width:1100px;
-  padding:60px 40px 60px;
-  border-radius:24px;
-  background:var(--bg);
-  text-align:center;
-
-  /* мягкая текстура как в первом блоке */
-  background-image:
-    radial-gradient(circle at 12% 18%, rgba(0,0,0,0.035), transparent 35%),
-    radial-gradient(circle at 80% 28%, rgba(0,0,0,0.03), transparent 40%),
-    radial-gradient(circle at 50% 85%, rgba(0,0,0,0.03), transparent 45%),
-    linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
-}
-
   /* =======================
-     Responsive
-  ======================= */
-  @media (max-width: 560px){
-/* Место проведения — убрать большой разрыв между текстом и фото на телефоне */
-.wplace{
-  padding: 12px 20px 12px;
-}
-
-.wplace-wrap{
-  gap: 10px !important;
-}
-
-.wplace-link{
-  margin-bottom: 0 !important;
-}
-
-.wplace-right{
-  margin-top: 0 !important;
-}
-.wplace-left{
-  margin-bottom: 0 !important;
-}
-
-.wplace-addr{
-  margin-bottom: 10px;
-}
-/* Первый блок — на всю ширину */
-.wpol{
-  padding: 0;
-}
-
-.wpol-wrap{
-  padding: 50px 20px;
-  border-radius: 0;
-  max-width:100%;
-}
-
-/* Последний блок — на всю ширину */
-.wtiming{
-  padding: 0;
-}
-
-.wtiming-wrap{
-  padding: 50px 20px;
-  border-radius: 0;
-  max-width:100%;
-}
-
-    .wpol-row{
-      position:relative;
-      gap:0;
-      justify-content:center;
-      align-items:flex-start;
-    }
-    .wpol-date{ display:none; }
-    .wpol-date-line{ display:block; }
-
-    .pol{
-      width: min(46vw, 220px);
-      padding:12px 12px 10px;
-    }
-    .pol-left{ transform: rotate(-7deg) translateY(-6px); z-index:1; }
-    .pol-right{ transform: rotate(6deg) translateY(8px); margin-left:-18px; z-index:2; }
-
-    .pol-cap{ font-size:12px; }
-
-    .wpol-names{ gap:14px; }
-    .wpol-names .name{ font-size: clamp(20px, 6.2vw, 36px); }
-    .wpol-names .plus{ font-size: clamp(16px, 4.8vw, 22px); transform: translateY(-3px); }
-
-    .wcal{ padding:0 14px 34px; }
-    .wcal-card{ padding:24px 16px 28px; max-width:520px; }
-
-    .wform{ padding:0 14px; }
-    .wform-card{ padding:22px 14px 14px; }
-    .wform-title{ font-size:20px; }
-
-    /* ✅ высота формы на мобилке */
-    .wform-iframe{ height:1100px; }
-  }
-
-  /* =======================
-     4) PLACE (no background)
+     4) PLACE
   ======================= */
   .wplace{
     width:100%;
@@ -692,21 +501,139 @@
     object-fit:cover;
   }
 
-  /* ✅ адаптация блока места на планшете/мобилке */
+  /* =======================
+     5) TIMING — minimal elegant
+  ======================= */
+  .wtiming{
+    width:100%;
+    padding: 30px 0 30px;
+    display:flex;
+    justify-content:center;
+  }
+
+  .wtiming-wrap{
+    width:100%;
+    max-width:1100px;
+    padding:60px 40px 60px;
+    border-radius:24px;
+    background:var(--bg);
+    text-align:center;
+
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(0,0,0,0.035), transparent 35%),
+      radial-gradient(circle at 80% 28%, rgba(0,0,0,0.03), transparent 40%),
+      radial-gradient(circle at 50% 85%, rgba(0,0,0,0.03), transparent 45%),
+      linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+  }
+
+  .wtiming-title{
+    font-family:"Playfair Display", serif;
+    font-weight:400;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size: clamp(28px, 4vw, 56px);
+    margin-bottom:50px;
+    color:#2a2a2a;
+  }
+
+  .wtimeline{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+  }
+
+  .wtimeline-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+  }
+
+  .wtimeline-time{
+    font-family:"Caveat", cursive;
+    font-size: clamp(30px, 3vw, 46px);
+    color:var(--accent);
+    letter-spacing:.05em;
+    line-height:1;
+  }
+
+  .wtimeline-text{
+    font-size: clamp(14px, 1.8vw, 18px);
+    letter-spacing:.06em;
+    color:#3c3c3c;
+    line-height:1.4;
+  }
+
+  /* =======================
+     Responsive
+  ======================= */
+
+  /* ✅ PLACE: column layout on smaller screens */
   @media (max-width: 780px){
     .wplace-wrap{
       flex-direction:column;
       align-items:stretch;
-      gap:18px;
+      gap:12px; /* <-- было 18px, из-за этого и был "огромный" разрыв */
     }
+
+    /* КЛЮЧЕВОЕ: убираем фиксированный flex-basis у правой колонки,
+       который в column-режиме превращается в "высоту" и даёт пустое место */
     .wplace-right{
       flex: 0 0 auto;
       width:100%;
+      justify-content:flex-start;
     }
-/* Убрать скругление у тайминга на мобилке */
-.wtiming-wrap{
-  border-radius: 0 !important;
-}
+  }
+
+  @media (max-width: 560px){
+
+    /* Первый блок — на всю ширину и без скругления */
+    .wpol{ padding:0; }
+    .wpol-wrap{
+      padding:50px 20px;
+      border-radius:0;
+      max-width:100%;
+    }
+
+    /* Календарь — как карточка */
+    .wcal{ padding:0 14px 34px; }
+    .wcal-card{ padding:24px 16px 28px; max-width:520px; }
+
+    /* Место проведения — дополнительно поджать */
+    .wplace{ padding: 12px 20px; }
+    .wplace-wrap{ gap:10px; }
+    .wplace-addr{ margin-bottom:12px; }
+
+    /* Тайминг — на всю ширину и без скругления */
+    .wtiming{ padding:0; }
+    .wtiming-wrap{
+      padding:50px 20px;
+      border-radius:0 !important;
+      max-width:100%;
+    }
+
+    /* Твои существующие моб.настройки полароидов */
+    .wpol-row{
+      position:relative;
+      gap:0;
+      justify-content:center;
+      align-items:flex-start;
+    }
+    .wpol-date{ display:none; }
+    .wpol-date-line{ display:block; }
+
+    .pol{
+      width: min(46vw, 220px);
+      padding:12px 12px 10px;
+    }
+    .pol-left{ transform: rotate(-7deg) translateY(-6px); z-index:1; }
+    .pol-right{ transform: rotate(6deg) translateY(8px); margin-left:-18px; z-index:2; }
+
+    .pol-cap{ font-size:12px; }
+
+    .wpol-names{ gap:14px; }
+    .wpol-names .name{ font-size: clamp(20px, 6.2vw, 36px); }
+    .wpol-names .plus{ font-size: clamp(16px, 4.8vw, 22px); transform: translateY(-3px); }
   }
 </style>
 
