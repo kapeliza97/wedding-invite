@@ -202,24 +202,31 @@
   /* =======================
      1) POLAROIDS
   ======================= */
-  .wpol{
-    width:100%;
-    background:var(--bg);
-    border-radius:18px;
-    overflow:hidden;
-    background-image:
-      radial-gradient(circle at 10% 15%, rgba(0,0,0,0.035), transparent 35%),
-      radial-gradient(circle at 80% 30%, rgba(0,0,0,0.03), transparent 40%),
-      radial-gradient(circle at 45% 85%, rgba(0,0,0,0.03), transparent 45%),
-      linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
-  }
+ .wpol{
+  width:100%;
+  padding: 30px 0 30px;
+  display:flex;
+  justify-content:center;
+}
 
   .wpol-wrap{
-    max-width:1100px;
-    margin:0 auto;
-    padding:60px 22px 60px;
-    text-align:center;
-  }
+  width:100%;
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 22px 60px;
+  text-align:center;
+
+  background:var(--bg);
+  border-radius:24px;
+  overflow:hidden;
+
+  background-image:
+    radial-gradient(circle at 10% 15%, rgba(0,0,0,0.035), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(0,0,0,0.03), transparent 40%),
+    radial-gradient(circle at 45% 85%, rgba(0,0,0,0.03), transparent 45%),
+    linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+}
+
 
   .wpol-top{
     letter-spacing:.22em;
@@ -589,8 +596,9 @@
 ======================= */
 .wtiming{
   width:100%;
-  padding: 40px 20px 40px;
-  text-align:center;
+  padding: 30px 0 30px;
+  display:flex;
+  justify-content:center;
 }
 
 .wtiming-wrap{
@@ -635,6 +643,23 @@
   color:#3c3c3c;
   line-height:1.4;
 }
+
+.wtiming-wrap{
+  width:100%;
+  max-width:1100px;
+  padding:60px 40px 60px;
+  border-radius:24px;
+  background:var(--bg);
+  text-align:center;
+
+  /* мягкая текстура как в первом блоке */
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(0,0,0,0.035), transparent 35%),
+    radial-gradient(circle at 80% 28%, rgba(0,0,0,0.03), transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(0,0,0,0.03), transparent 45%),
+    linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+}
+</style>
 
 </body>
 </html>
