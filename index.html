@@ -134,6 +134,45 @@
     </div>
   </section>
 
+<div class="wgap" aria-hidden="true"></div>
+
+<!-- ===== 5) TIMING ===== -->
+<section class="wtiming" aria-label="Timing">
+  <div class="wtiming-wrap">
+
+    <div class="wtiming-title">ТАЙМИНГ</div>
+
+    <div class="wtimeline">
+
+      <div class="wtimeline-item">
+        <div class="wtimeline-time">15:00</div>
+        <div class="wtimeline-text">Сбор гостей</div>
+      </div>
+
+      <div class="wtimeline-item">
+        <div class="wtimeline-time">15:30</div>
+        <div class="wtimeline-text">Торжественная церемония</div>
+      </div>
+
+      <div class="wtimeline-item">
+        <div class="wtimeline-time">16:00</div>
+        <div class="wtimeline-text">Банкет</div>
+      </div>
+
+      <div class="wtimeline-item">
+        <div class="wtimeline-time">22:00</div>
+        <div class="wtimeline-text">Завершение вечера и дискотека</div>
+      </div>
+
+      <div class="wtimeline-item">
+        <div class="wtimeline-time">23:00</div>
+        <div class="wtimeline-text">After party</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
 </div>
 
@@ -521,7 +560,7 @@
     width:100%;
     border-radius:18px;
     overflow:hidden;
-    box-shadow: var(--shadow);
+    box-shadow: none;
     background:#e9e9e9;
   }
 
@@ -545,7 +584,57 @@
     }
   }
 
-</style>
+/* =======================
+   5) TIMING — minimal elegant
+======================= */
+.wtiming{
+  width:100%;
+  padding: 40px 20px 40px;
+  text-align:center;
+}
+
+.wtiming-wrap{
+  max-width:720px;
+  margin:0 auto;
+}
+
+.wtiming-title{
+  font-family:"Playfair Display", serif;
+  font-weight:400;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size: clamp(28px, 4vw, 56px);
+  margin-bottom:50px;
+  color:#2a2a2a;
+}
+
+.wtimeline{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+}
+
+.wtimeline-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.wtimeline-time{
+  font-family:"Caveat", cursive;
+  font-size: clamp(30px, 3vw, 46px);
+  color:var(--accent);
+  letter-spacing:.05em;
+  line-height:1;
+}
+
+.wtimeline-text{
+  font-size: clamp(14px, 1.8vw, 18px);
+  letter-spacing:.06em;
+  color:#3c3c3c;
+  line-height:1.4;
+}
 
 </body>
 </html>
