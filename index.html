@@ -177,9 +177,9 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600&family=Caveat:wght@600&display=swap');
 
-  /* ✅ базовые фиксы для GitHub Pages */
+  /* ✅ базовые фиксы */
   html, body { margin:0; padding:0; }
-  img { max-width:100%; height:auto; }
+  img { max-width:100%; height:auto; display:block; }
 
   .wsite{
     --bg:#f3f3f3;
@@ -225,13 +225,13 @@
       linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
   }
 
+  /* ✅ как у "19.06.2026 в 15:00" */
   .wpol-top{
-    letter-spacing:.22em;
-    font-weight:400;
-    font-size:14px;
-    opacity:.9;
+    font-family:"Caveat", cursive;
+    font-size: clamp(15px, 3.8vw, 26px);
+    color:var(--accent);
+    letter-spacing:0.05em;
     margin-bottom:60px;
-    text-transform:uppercase;
   }
 
   .wpol-row{
@@ -278,7 +278,6 @@
     width:100%;
     height:100%;
     object-fit:cover;
-    display:block;
   }
 
   .pol-cap{
@@ -418,7 +417,7 @@
   ======================= */
   .wplace{
     width:100%;
-    padding: 18px 20px 18px;
+    padding: 18px 20px;
     background: transparent;
   }
 
@@ -497,16 +496,15 @@
   .wplace-photo img{
     width:100%;
     height:auto;
-    display:block;
     object-fit:cover;
   }
 
   /* =======================
-     5) TIMING — minimal elegant
+     5) TIMING
   ======================= */
   .wtiming{
     width:100%;
-    padding: 30px 0 30px;
+    padding: 30px 0;
     display:flex;
     justify-content:center;
   }
@@ -514,7 +512,7 @@
   .wtiming-wrap{
     width:100%;
     max-width:1100px;
-    padding:60px 40px 60px;
+    padding:60px 40px;
     border-radius:24px;
     background:var(--bg);
     text-align:center;
@@ -568,21 +566,26 @@
      Responsive
   ======================= */
 
-  /* ✅ PLACE: column layout on smaller screens */
+  /* ✅ ключевой фикс "пустого места" в PLACE:
+     min(520px,46vw) в column-режиме превращается в ВЫСОТУ -> поэтому сбрасываем */
   @media (max-width: 780px){
     .wplace-wrap{
-      flex-direction:column;
-      align-items:stretch;
-      gap:12px; /* <-- было 18px, из-за этого и был "огромный" разрыв */
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
     }
 
-    /* КЛЮЧЕВОЕ: убираем фиксированный flex-basis у правой колонки,
-       который в column-режиме превращается в "высоту" и даёт пустое место */
+    .wplace-left,
     .wplace-right{
-      flex: 0 0 auto;
-      width:100%;
-      justify-content:flex-start;
+      flex: 0 0 auto !important;
+      width: 100%;
+      min-width: 0;
+      margin: 0 !important;
     }
+
+    .wplace-right{ justify-content:flex-start; }
+    .wplace-top{ margin-bottom: 14px; }
+    .wplace-addr{ margin-bottom: 12px; }
   }
 
   @media (max-width: 560px){
@@ -612,7 +615,7 @@
       max-width:100%;
     }
 
-    /* Твои существующие моб.настройки полароидов */
+    /* моб.настройки полароидов */
     .wpol-row{
       position:relative;
       gap:0;
