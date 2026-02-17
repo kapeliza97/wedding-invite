@@ -13,6 +13,21 @@
 
 <div class="wsite">
 
+  <!-- ===== HEADER NAV ===== -->
+  <header class="whead" aria-label="Навигация">
+    <div class="whead-wrap">
+
+      <nav class="whead-nav" aria-label="Разделы">
+        <a class="whead-link" href="#invite">Наша свадьба</a>
+        <a class="whead-link" href="#place">Место проведения</a>
+        <a class="whead-link" href="#timing">Тайминг</a>
+        <a class="whead-link" href="#dress">Дресс-код</a>
+      </nav>
+
+      <a class="whead-btn" href="#rsvp">Подтвердить присутствие</a>
+    </div>
+  </header>
+
   <!-- ===== 1) POLAROIDS ===== -->
   <section class="wpol" aria-label="Wedding hero">
     <div class="wpol-wrap">
@@ -61,7 +76,7 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 2) TEXT INVITE ===== -->
-  <section class="winvite" aria-label="Invitation text">
+  <section class="winvite" id="invite" aria-label="Invitation text">
     <div class="winvite-wrap">
       <div class="winvite-text">
         Дорогие наши родные и друзья! <br><br>
@@ -102,7 +117,7 @@
   <div class="wgap wgap--sm" aria-hidden="true"></div>
 
   <!-- ===== 4) PLACE ===== -->
-  <section class="wplace" aria-label="Place">
+  <section class="wplace" id="place" aria-label="Place">
     <div class="wplace-wrap">
       <div class="wplace-left">
         <div class="wplace-top">МЕСТО ПРОВЕДЕНИЯ</div>
@@ -135,7 +150,7 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 5) TIMING ===== -->
-  <section class="wtiming" aria-label="Timing">
+  <section class="wtiming" id="timing" aria-label="Timing">
     <div class="wtiming-wrap">
 
       <div class="wtiming-title">ТАЙМИНГ</div>
@@ -173,7 +188,7 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 6) DRESS CODE ===== -->
-  <section class="wdress" aria-label="Dress code">
+  <section class="wdress" id="dress" aria-label="Dress code">
     <div class="wdress-wrap">
 
       <div class="wdress-left">
@@ -212,7 +227,7 @@
   <!-- ===== 7) GUEST FORM ===== -->
   <div class="wgap" aria-hidden="true"></div>
 
-  <section class="wform" aria-label="Guest form">
+  <section class="wform" id="rsvp" aria-label="Guest form">
     <div class="wform-card">
       <div class="wform-wrap">
 
@@ -288,6 +303,10 @@
   html, body { margin:0; padding:0; }
   img { max-width:100%; height:auto; display:block; }
 
+  html { scroll-behavior: smooth; }
+  /* чтобы якоря не прятались под sticky-хедером */
+  #invite, #place, #timing, #dress, #rsvp { scroll-margin-top: 86px; }
+
   .wsite{
     --bg:#f3f3f3;
     --text:#1b1b1b;
@@ -303,6 +322,71 @@
 
   .wgap{ height: 34px; }
   .wgap--sm{ height: 26px; }
+
+  /* ===== HEADER NAV ===== */
+  .whead{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background: rgba(243,243,243,.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(0,0,0,.06);
+  }
+  .whead-wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding: 16px 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap: 26px;
+  }
+  .whead-nav{
+    display:flex;
+    align-items:center;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .whead-link{
+    text-decoration:none;
+    color: var(--accent);
+    font-size: 16px;
+    letter-spacing: .02em;
+    line-height: 1.2;
+    padding: 6px 2px;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease, transform .15s ease, opacity .15s ease;
+  }
+  .whead-link:hover{
+    border-bottom-color: rgba(193,74,99,.55);
+    transform: translateY(-1px);
+  }
+  .whead-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding: 12px 18px;
+    border-radius: 10px;
+
+    border: 2px solid rgba(193,74,99,.65);
+    color: var(--accent);
+    text-decoration:none;
+
+    font-size:16px;
+    letter-spacing:.02em;
+
+    transition: transform .15s ease, background .15s ease;
+    white-space: nowrap;
+  }
+  .whead-btn:hover{
+    background: rgba(193,74,99,.08);
+    transform: translateY(-1px);
+  }
 
   /* 1) POLAROIDS */
   .wpol{
@@ -708,8 +792,8 @@
 
     font-family:"Playfair Display", Georgia, serif;
     font-size:52px;
-    line-height:1;            /* важно */
-    padding:0;                /* важно */
+    line-height:1;
+    padding:0;
     text-align:center;
 
     border:1px solid rgba(0,0,0,.12);
@@ -743,7 +827,7 @@
     .wplace-addr{ margin-bottom: 12px; }
   }
 
-  /* ✅ FIX пустого места в DRESS CODE — идентично PLACE */
+  /* FIX пустого места в DRESS CODE — идентично PLACE */
   @media (max-width: 780px){
     .wdress-wrap{
       flex-direction: column;
@@ -760,6 +844,27 @@
     .wdress-right{ justify-content:flex-start; }
     .wdress-title{ margin-bottom: 14px; }
     .wdress-text{ margin-bottom: 12px; }
+  }
+
+  /* HEADER mobile */
+  @media (max-width: 560px){
+    #invite, #place, #timing, #dress, #rsvp { scroll-margin-top: 72px; }
+
+    .whead-wrap{
+      padding: 12px 14px;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .whead-nav{
+      gap: 14px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .whead-nav::-webkit-scrollbar{ display:none; }
+    .whead-link{ font-size: 14px; white-space: nowrap; }
+    .whead-btn{ font-size: 14px; padding: 10px 12px; }
   }
 
   @media (max-width: 560px){
