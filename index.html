@@ -579,27 +579,45 @@
   transform: translateY(-1px);
 }
 
-/* Burger button */
+/* Burger */
 .wburger{
-  display:none; /* показываем только на мобилке */
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.55);
-  cursor: pointer;
+  display:none;
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.08);
+  background:rgba(255,255,255,.65);
+  cursor:pointer;
 
+  display:none;
   align-items:center;
   justify-content:center;
-  gap: 5px;
-  padding: 10px;
+  position:relative;
 }
+
 .wburger span{
-  display:block;
-  width: 18px;
-  height: 2px;
-  background: rgba(193,74,99,.85);
-  border-radius: 2px;
+  position:absolute;
+  width:20px;
+  height:2px;
+  background:var(--accent);
+  border-radius:2px;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+/* три линии */
+.wburger span:nth-child(1){ transform: translateY(-6px); }
+.wburger span:nth-child(2){ transform: translateY(0); }
+.wburger span:nth-child(3){ transform: translateY(6px); }
+
+/* состояние ОТКРЫТО */
+.wburger.is-open span:nth-child(1){
+  transform: rotate(45deg);
+}
+.wburger.is-open span:nth-child(2){
+  opacity:0;
+}
+.wburger.is-open span:nth-child(3){
+  transform: rotate(-45deg);
 }
 
 /* Mobile dropdown panel */
@@ -1452,15 +1470,20 @@ document.addEventListener("DOMContentLoaded", function(){
 
   if (burger && menu) {
     const closeMenu = () => {
-      menu.hidden = true;
-      burger.setAttribute('aria-expanded', 'false');
-    };
+  menu.hidden = true;
+  burger.setAttribute('aria-expanded', 'false');
+  burger.classList.remove('is-open');
+};
 
-    burger.addEventListener('click', () => {
-      const willOpen = menu.hidden;      // если hidden=true, откроем
-      menu.hidden = !willOpen;
-      burger.setAttribute('aria-expanded', String(willOpen));
-    });
+
+   burger.addEventListener('click', () => {
+  const willOpen = menu.hidden;
+
+  menu.hidden = !willOpen;
+  burger.setAttribute('aria-expanded', String(willOpen));
+  burger.classList.toggle('is-open', willOpen);
+});
+
 
     // закрыть меню при клике по пункту
     menu.addEventListener('click', (e) => {
