@@ -485,7 +485,8 @@
 
   html { scroll-behavior: smooth; }
   /* чтобы якоря не прятались под sticky-хедером */
-  #invite, #place, #timing, #dress, #rsvp { scroll-margin-top: 86px; }
+  #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 86px; }
+
 
   .wsite{
     --bg:#f3f3f3;
@@ -1093,26 +1094,27 @@
     .wdress-text{ margin-bottom: 12px; }
   }
 
-  /* HEADER mobile */
-  @media (max-width: 560px){
-    #invite, #place, #timing, #dress, #rsvp { scroll-margin-top: 72px; }
+  /* HEADER mobile — кнопка + бургер, ссылки внутри выпадающего меню */
+@media (max-width: 560px){
+  #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 72px; }
 
-    .whead-wrap{
-      padding: 12px 14px;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .whead-nav{
-      gap: 14px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .whead-nav::-webkit-scrollbar{ display:none; }
-    .whead-link{ font-size: 14px; white-space: nowrap; }
-    .whead-btn{ font-size: 14px; padding: 10px 12px; }
+  .whead-wrap{
+    padding: 12px 14px;
+    justify-content: space-between;
+    gap: 12px;
   }
+
+  .whead-nav{ display:none; }   /* прячем ссылки */
+  .wburger{ display:flex; }    /* показываем бургер */
+
+  .whead-btn{
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .wmnav{ padding: 0 14px 14px; }
+}
+
 
   @media (max-width: 560px){
     .wpol{ padding:0; }
@@ -1443,6 +1445,35 @@ document.addEventListener("DOMContentLoaded", function(){
 
   update();
   setInterval(update, 1000);
+
+  // ===== Mobile burger menu =====
+  const burger = document.querySelector('.wburger');
+  const menu = document.getElementById('wmnav');
+
+  if (burger && menu) {
+    const closeMenu = () => {
+      menu.hidden = true;
+      burger.setAttribute('aria-expanded', 'false');
+    };
+
+    burger.addEventListener('click', () => {
+      const willOpen = menu.hidden;      // если hidden=true, откроем
+      menu.hidden = !willOpen;
+      burger.setAttribute('aria-expanded', String(willOpen));
+    });
+
+    // закрыть меню при клике по пункту
+    menu.addEventListener('click', (e) => {
+      if (e.target.closest('a')) closeMenu();
+    });
+
+    // закрыть меню при клике вне хедера
+    document.addEventListener('click', (e) => {
+      if (menu.hidden) return;
+      if (!e.target.closest('.whead')) closeMenu();
+    });
+  }
+
 });
 </script>
 
