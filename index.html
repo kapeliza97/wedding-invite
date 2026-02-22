@@ -9,6 +9,252 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- =======================
+       GLOBAL CSS (base only)
+       ======================= -->
+  <style>
+    @font-face{
+      font-family: "Lighthaus";
+      src: url("Lighthaus.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face{
+      font-family: "Bella Script CYR";
+      src: url("Bella Script CYR.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+      width:100%;
+      max-width:100%;
+      overflow-x:hidden;
+    }
+
+    img { max-width:100%; height:auto; display:block; }
+
+    html { scroll-behavior: smooth; }
+    #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 86px; }
+
+    .wsite{
+      --bg:#f3f3f3;
+      --text:#1b1b1b;
+      --muted:#8a8a8a;
+      --frame:#ffffff;
+      --shadow:0 16px 34px rgba(0,0,0,.16);
+      --accent:#c14a63;
+
+      --hero-bg:url("https://drive.google.com/thumbnail?id=1TiCwhbj88DsfT4pjp5q8iWbknVZoRSVS&sz=w2000");
+
+      width:100%;
+      max-width:100%;
+      overflow-x:hidden;
+
+      color:var(--text);
+      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .wsite *{ box-sizing:border-box; }
+
+    .wgap{ height: 34px; }
+    .wgap--sm{ height: 26px; }
+
+    /* Bella Script CYR: единый стиль без лишнего воздуха */
+    .wpol-top,
+    .winvite-date,
+    .wtimeline-time,
+    .wform-date,
+    .wfinal-love,
+    .wfinal-names{
+      font-family: "Bella Script CYR", cursive;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Big section titles */
+    .wplace-top,
+    .wtiming-title,
+    .wdress-title,
+    .wform-heading,
+    .wcont-title{
+      font-family:"Lighthaus", Georgia, serif;
+      font-weight:400;
+      font-size: clamp(28px, 3.0vw, 36px);
+      text-transform:uppercase;
+      color:#2a2a2a;
+    }
+
+    /* POLAROIDS date */
+    .wpol-date{
+      width:150px;
+      text-align:center;
+      color:var(--muted);
+      font-family:"Lighthaus", Georgia, serif;
+      font-weight:400;
+      letter-spacing:.05em;
+      line-height:1;
+      user-select:none;
+      text-transform:none;
+    }
+    .wpol-date .d{
+      font-size:54px;
+      opacity:.9;
+      margin: 10px 0;
+    }
+
+    /* Calendar month */
+    .wcal-month{
+      font-family:"Lighthaus", Georgia, serif;
+      font-weight:400;
+      font-size: clamp(28px, 3.0vw, 36px);
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      color:#2a2a2a;
+      margin-bottom:22px;
+    }
+
+    /* Countdown title */
+    .wcount-title{
+      font-family:"Lighthaus", Georgia, serif;
+      font-weight:400;
+      font-size: clamp(28px, 3.0vw, 36px);
+      letter-spacing:.07em;
+      text-transform:uppercase;
+      color:#2a2a2a;
+    }
+
+    /* Names (POLAROIDS) */
+    .wpol-names .name{
+      font-family:"Lighthaus", Georgia, serif;
+      font-weight:400;
+      font-size: clamp(34px, 4.8vw, 58px);
+      letter-spacing:.05em;
+      color:#2a2a2a;
+    }
+
+    /* Final title */
+    .wfinal-top{
+      font-family:"Lighthaus", Georgia, serif;
+      font-weight:400;
+      font-size: clamp(30px, 3.3vw, 40px);
+      letter-spacing:.05em;
+      color:#2a2a2a;
+    }
+
+    /* Body text reference */
+    .winvite-text{
+      font-size: clamp(15px, 1.9vw, 20px);
+      line-height:1.6;
+      color:#3c3c3c;
+      letter-spacing:0.01em;
+    }
+
+    /* Make "Ресторан NOVO, 2 этаж" same as invite body (Montserrat) */
+    .wplace-name{
+      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight:400;
+      font-size: clamp(15px, 1.9vw, 22px);
+      line-height:1.6;
+      color:#3c3c3c;
+      letter-spacing:0.01em;
+      margin-top:20px;
+      margin-bottom:10px;
+    }
+
+    /* ==========================
+       RESPONSIVE (GLOBAL ONLY)
+       ========================== */
+    @media (max-width: 990px){
+      .whead-nav{ display:none; }
+      .wburger{ display:flex; }
+    }
+
+    @media (max-width: 560px){
+      #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 72px; }
+
+      .whead-wrap{
+        padding: 12px 14px;
+        justify-content: flex-end;
+        gap: 12px;
+      }
+
+      .whead-btn{
+        font-size: 14px;
+        padding: 10px 12px;
+      }
+
+      .wmnav{ padding: 0 14px 14px; }
+
+      .wpol{ padding:0; }
+      .wpol-wrap{ padding:42px 20px; border-radius:0; max-width:100%; }
+
+      .wcal{ padding:0 14px 34px; }
+      .wcal-card{ padding:24px 28px 28px; max-width:520px; }
+
+      .wplace{ padding: 12px 20px; }
+      .wplace-wrap{ gap:25px; }
+
+      .wtiming{ padding:0; }
+      .wtiming-wrap{ padding:50px 20px; border-radius:0; max-width:100%; }
+
+      .wform{ padding:0 14px; }
+      .wform-card{ padding:26px 14px 14px; border-radius:24px; }
+      .wform-iframe{ height:1100px; }
+
+      .wcount{ padding:0; }
+      .wcount-wrap{
+        border-radius:0;
+        max-width:100%;
+        padding:44px 18px;
+        box-shadow:none;
+      }
+
+      .wpol-row{ position:relative; gap:0; justify-content:center; align-items:flex-start; }
+      .wpol-date{ display:none; }
+      .wpol-date-line{ display:block; }
+
+      .pol{ width: min(46vw, 220px); padding:12px 12px 10px; }
+      .pol-left{ transform: rotate(-7deg) translateY(-6px); z-index:1; }
+      .pol-right{ transform: rotate(6deg) translateY(8px); margin-left:-18px; z-index:2; }
+      .pol-cap{ font-size:12px; }
+
+      .wpol-names{ gap:14px; margin-top:42px; }
+      .wpol-names .name{ font-size: clamp(20px, 6.2vw, 36px); }
+      .wpol-names .plus{ font-size: clamp(16px, 4.8vw, 22px); transform: translateY(-3px); }
+
+      .winvite-date{ font-size: 30px; }
+
+      .wplace-top, .wtiming-title, .wdress-title, .wform-heading, .wcont-title{
+        font-size: clamp(32px, 9vw, 44px);
+      }
+
+      .wcont{ padding:0; }
+      .wcont-wrap{ border-radius:0; max-width:100%; padding:50px 20px; }
+      .wcont-grid{ grid-template-columns: 1fr; }
+      .wcont-card--soft{ padding-top:76px; }
+      .wcont-sticker{ right:-10px; width:min(280px, 84%); }
+
+      .wfinal{ padding: 0; }
+      .wfinal-wrap{
+        max-width:100%;
+        padding: 44px 18px 54px;
+        flex-direction: column;
+        align-items: stretch;
+        text-align:center;
+        gap: 28px;
+      }
+      .wfinal-text{ text-align:center; }
+      .wfinal-love, .wfinal-names{ text-align:center; }
+      .wfinal-photos{ justify-content:center; }
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +268,6 @@
   <header class="whead" aria-label="Навигация">
     <div class="whead-wrap">
 
-      <!-- Desktop menu -->
       <nav class="whead-nav" aria-label="Разделы">
         <a class="whead-link" href="#invite">Наша свадьба</a>
         <a class="whead-link" href="#place">Место проведения</a>
@@ -31,18 +276,15 @@
         <a class="whead-link" href="#contacts">Контакты</a>
       </nav>
 
-      <!-- Right side -->
       <div class="whead-actions">
         <a class="whead-btn" href="#rsvp">Подтвердить присутствие</a>
 
-        <!-- Burger (mobile) -->
         <button class="wburger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="wmnav">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
 
-    <!-- Mobile dropdown -->
     <div class="wmnav" id="wmnav" hidden>
       <div class="wmnav-card" role="menu" aria-label="Меню">
         <a class="wmnav-link" href="#invite">Наша свадьба</a>
@@ -53,6 +295,148 @@
       </div>
     </div>
   </header>
+
+  <style>
+    /* ===== HEADER NAV ===== */
+    .whead{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      background: rgba(243,243,243,.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+
+    .whead-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding: 16px 22px;
+
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap: 18px;
+    }
+
+    .whead-nav{
+      display:flex;
+      align-items:center;
+      gap: 26px;
+      flex-wrap: wrap;
+    }
+
+    .whead-link{
+      text-decoration:none;
+      color: var(--accent);
+      font-size: 16px;
+      letter-spacing: .02em;
+      line-height: 1.2;
+      padding: 6px 2px;
+      border-bottom: 1px solid transparent;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .whead-link:hover{
+      border-bottom-color: rgba(193,74,99,.55);
+      transform: translateY(-1px);
+    }
+
+    .whead-actions{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+
+    .whead-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 12px 18px;
+      border-radius: 10px;
+
+      border: 2px solid rgba(193,74,99,.65);
+      color: var(--accent);
+      text-decoration:none;
+
+      font-size:16px;
+      letter-spacing:.02em;
+      white-space: nowrap;
+
+      transition: transform .15s ease, background .15s ease;
+    }
+    .whead-btn:hover{
+      background: rgba(193,74,99,.08);
+      transform: translateY(-1px);
+    }
+
+    /* Burger */
+    .wburger{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.08);
+      background:rgba(255,255,255,.65);
+      cursor:pointer;
+
+      display:none;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+
+    .wburger span{
+      position:absolute;
+      width:20px;
+      height:2px;
+      background:var(--accent);
+      border-radius:2px;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+
+    .wburger span:nth-child(1){ transform: translateY(-6px); }
+    .wburger span:nth-child(2){ transform: translateY(0); }
+    .wburger span:nth-child(3){ transform: translateY(6px); }
+
+    .wburger.is-open span:nth-child(1){ transform: rotate(45deg); }
+    .wburger.is-open span:nth-child(2){ opacity:0; }
+    .wburger.is-open span:nth-child(3){ transform: rotate(-45deg); }
+
+    /* Mobile dropdown panel */
+    .wmnav{
+      max-width:1100px;
+      margin: 0 auto;
+      padding: 0 22px 14px;
+    }
+    .wmnav-card{
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 16px;
+      box-shadow: 0 14px 34px rgba(0,0,0,.10);
+
+      padding: 10px;
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+    }
+    .wmnav-link{
+      text-decoration:none;
+      color:#3c3c3c;
+      padding: 12px 12px;
+      border-radius: 12px;
+      letter-spacing:.02em;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .wmnav-link:hover{
+      background: rgba(193,74,99,.08);
+      transform: translateY(-1px);
+    }
+  </style>
 
 
   <!-- ===== 1) POLAROIDS ===== -->
@@ -100,7 +484,101 @@
     </div>
   </section>
 
+  <style>
+    /* 1) POLAROIDS */
+    .wpol{
+      width:100%;
+      padding: 20px 0 0;
+      display:flex;
+      justify-content:center;
+    }
+    .wpol-wrap{
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      padding:46px 22px 46px;
+      text-align:center;
+
+      border-radius:24px;
+      overflow:hidden;
+
+      background-image:
+        linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.25)),
+        var(--hero-bg);
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .wpol-top{
+      font-size: clamp(26px, 10vw, 100px);
+      color:var(--accent);
+      letter-spacing:0.05em;
+      margin-bottom:38px;
+    }
+
+    .wpol-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:46px;
+      flex-wrap:nowrap;
+    }
+
+    .pol{
+      width:min(270px, 42vw);
+      background:var(--frame);
+      padding:14px 14px 12px;
+      border-radius:6px;
+      box-shadow:var(--shadow);
+    }
+    .pol-left{ transform: rotate(-8deg) translateY(-16px); }
+    .pol-right{ transform: rotate(7deg) translateY(10px); }
+    .pol-img{
+      width:100%;
+      aspect-ratio:1/1;
+      border-radius:4px;
+      overflow:hidden;
+      background:#e9e9e9;
+    }
+    .pol img{ width:100%; height:100%; object-fit:cover; }
+    .pol-cap{
+      margin-top:9px;
+      min-height:24px;
+      font-size:13px;
+      color:#2a2a2a;
+      opacity:.92;
+      text-align:left;
+    }
+
+    .wpol-names{
+      display:flex;
+      align-items:baseline;
+      justify-content:center;
+      gap:22px;
+      margin-top:46px;
+      white-space:nowrap;
+    }
+    .wpol-names .plus{
+      font-weight:300;
+      font-size: 28px;
+      color:var(--muted);
+      transform: translateY(-6px);
+      flex: 0 0 auto;
+    }
+    .wpol-date-line{
+      display:none;
+      margin-top:14px;
+      font-weight:400;
+      letter-spacing:0.14em;
+      color:#5f5f5f;
+      font-size:14px;
+    }
+  </style>
+
   <div class="wgap" aria-hidden="true"></div>
+
 
   <!-- ===== 2) TEXT INVITE ===== -->
   <section class="winvite" id="invite" aria-label="Invitation text">
@@ -114,7 +592,21 @@
     </div>
   </section>
 
+  <style>
+    /* 2) INVITE TEXT */
+    .winvite{ width:100%; padding: 40px 20px; text-align:center; }
+    .winvite-wrap{ max-width:720px; margin:0 auto; }
+
+    .winvite-date{
+      margin-top:6px;
+      font-size:72px;
+      color:var(--accent);
+      letter-spacing:0.05em;
+    }
+  </style>
+
   <div class="wgap wgap--sm" aria-hidden="true"></div>
+
 
   <!-- ===== 3) CALENDAR ===== -->
   <section class="wcal" aria-label="Calendar">
@@ -141,7 +633,62 @@
     </div>
   </section>
 
+  <style>
+    /* 3) CALENDAR */
+    .wcal{ width:100%; padding:0 20px 40px; }
+    .wcal-card{
+      background:var(--bg);
+      border-radius:24px;
+      padding:28px 28px 36px;
+      max-width:560px;
+      margin:0 auto;
+    }
+    .wcal-wrap{ max-width:500px; margin:0 auto; text-align:center; }
+
+    .weekdays, .days{
+      display:grid;
+      grid-template-columns: repeat(7, 1fr);
+      row-gap:14px;
+      column-gap:6px;
+      margin:0 auto;
+      width:100%;
+      max-width:none;
+    }
+
+    .weekdays{ margin-bottom:14px; }
+
+    .weekdays div{
+      font-size:14px;
+      color:#9a9a9a;
+      letter-spacing:0.08em;
+      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .days div{
+      font-size:14px;
+      height:28px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .highlight::before{
+      content:"";
+      position:absolute;
+      width:28px;
+      height:28px;
+      border:1.4px solid var(--accent);
+      border-radius:50%;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      pointer-events:none;
+    }
+  </style>
+
   <div class="wgap wgap--sm" aria-hidden="true"></div>
+
 
   <!-- ===== 4) PLACE ===== -->
   <section class="wplace" id="place" aria-label="Place">
@@ -174,7 +721,77 @@
     </div>
   </section>
 
+  <style>
+    /* 4) PLACE */
+    .wplace{ width:100%; padding: 18px 20px; background: transparent; }
+    .wplace-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:46px;
+    }
+    .wplace-left{ flex: 1 1 520px; min-width: 280px; }
+
+    .wplace-addr{
+      font-size: clamp(14px, 1.7vw, 18px);
+      line-height:1.55;
+      color:#6b6b6b;
+      margin-bottom:20px;
+    }
+
+    .wplace-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      color: var(--accent);
+      text-decoration:none;
+      font-size:16px;
+      letter-spacing:0.02em;
+      padding:10px 14px;
+      border:1.4px solid rgba(193,74,99,.55);
+      border-radius:999px;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .wplace-link:hover{ background: rgba(193,74,99,.06); transform: translateY(-1px); }
+
+    .wplace-right{
+      flex: 0 0 min(520px, 46vw);
+      display:flex;
+      justify-content:flex-end;
+    }
+    .wplace-photo{
+      width:100%;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow: none;
+      background:#e9e9e9;
+    }
+    .wplace-photo img{ width:100%; height:auto; object-fit:cover; }
+
+    @media (max-width: 780px){
+      .wplace-wrap{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+      }
+      .wplace-left,
+      .wplace-right{
+        flex: 0 0 auto !important;
+        width: 100%;
+        min-width: 0;
+        margin: 0 !important;
+      }
+      .wplace-right{ justify-content:flex-start; }
+      .wplace-top{ margin-bottom: 14px; }
+      .wplace-addr{ margin-bottom: 20px; }
+    }
+  </style>
+
   <div class="wgap" aria-hidden="true"></div>
+
 
   <!-- ===== 5) TIMING ===== -->
   <section class="wtiming" id="timing" aria-label="Timing">
@@ -207,7 +824,73 @@
     </div>
   </section>
 
+  <style>
+    /* 5) TIMING */
+    .wtiming{ width:100%; padding: 30px 0; display:flex; justify-content:center; }
+
+    .wtiming-wrap{
+      width:100%;
+      max-width:1100px;
+      padding:60px 40px;
+      border-radius:24px;
+      overflow:hidden;
+      position:relative;
+      text-align:center;
+      background: var(--bg);
+    }
+
+    .wtiming-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-22px;
+      background-image:
+        linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,.22)),
+        var(--hero-bg);
+      background-size: cover;
+      background-position: center;
+      filter: blur(14px);
+      opacity:.55;
+      transform: scale(1.08);
+      z-index:0;
+    }
+
+    .wtiming-wrap::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(0,0,0,0.035), transparent 35%),
+        radial-gradient(circle at 80% 28%, rgba(0,0,0,0.03), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(0,0,0,0.03), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,0.40), rgba(255,255,255,0.08));
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .wtiming-wrap > *{ position:relative; z-index:2; }
+
+    .wtiming-title{ margin-bottom:50px; }
+
+    .wtimeline{ display:flex; flex-direction:column; gap:40px; }
+    .wtimeline-item{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+
+    .wtimeline-time{
+      font-size: clamp(25px, 25vw, 80px);
+      color:var(--accent);
+      letter-spacing:.05em;
+      line-height:1;
+      margin-bottom:2px;
+    }
+    .wtimeline-text{
+      font-size: clamp(14px, 1.8vw, 18px);
+      letter-spacing:.06em;
+      color:#3c3c3c;
+      line-height:1.4;
+    }
+  </style>
+
   <div class="wgap" aria-hidden="true"></div>
+
 
   <!-- ===== 6) DRESS CODE ===== -->
   <section class="wdress" id="dress" aria-label="Dress code">
@@ -246,9 +929,63 @@
     </div>
   </section>
 
-  <!-- ===== 7) GUEST FORM ===== -->
+  <style>
+    /* 6) DRESS CODE */
+    .wdress{ width:100%; padding: 40px 20px; }
+    .wdress-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:flex-start;
+      gap:60px;
+    }
+    .wdress-left{ flex: 1 1 620px; min-width:280px; }
+    .wdress-title{ margin-bottom:26px; }
+
+    .wdress-text, .wdress-point{
+      font-size: clamp(15px, 1.8vw, 18px);
+      line-height:1.7;
+      color:#3c3c3c;
+    }
+    .wdress-text{ margin-bottom:18px; }
+    .wdress-point{ margin-bottom:14px; }
+    .wdress-label{ font-weight:600; color:#2a2a2a; }
+    .wdress-right{
+      flex: 0 0 min(480px, 40vw);
+      display:flex;
+      justify-content:flex-end;
+    }
+    .wdress-photo{
+      width:100%;
+      border-radius:18px;
+      overflow:hidden;
+      background:#e9e9e9;
+    }
+    .wdress-photo img{ width:100%; height:auto; object-fit:cover; }
+
+    @media (max-width: 780px){
+      .wdress-wrap{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+      }
+      .wdress-left,
+      .wdress-right{
+        flex: 0 0 auto !important;
+        width: 100%;
+        min-width: 0;
+        margin: 0 !important;
+      }
+      .wdress-right{ justify-content:flex-start; }
+      .wdress-title{ margin-bottom: 14px; }
+      .wdress-text{ margin-bottom: 12px; }
+    }
+  </style>
+
   <div class="wgap" aria-hidden="true"></div>
 
+
+  <!-- ===== 7) GUEST FORM ===== -->
   <section class="wform" id="rsvp" aria-label="Guest form">
     <div class="wform-card">
       <div class="wform-wrap">
@@ -277,9 +1014,53 @@
     </div>
   </section>
 
+  <style>
+    /* 7) GUEST FORM */
+    .wform{ width:100%; padding:0 20px; display:flex; justify-content:center; }
+    .wform-card{
+      width:100%;
+      max-width:760px;
+      background:var(--bg);
+      border-radius:24px;
+      padding:34px 22px 22px;
+    }
+    .wform-wrap{ max-width:680px; margin:0 auto; text-align:center; }
+    .wform-heading{ margin-bottom:18px; }
+
+    .wform-text{
+      font-size: clamp(15px, 1.9vw, 18px);
+      line-height:1.6;
+      color:#3c3c3c;
+      margin:0 auto 18px;
+    }
+
+    .wform-date{
+      font-family: "Bella Script CYR", cursive;
+      font-size: 72px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .wform-embed{
+      width:100%;
+      border-radius:16px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .wform-iframe{
+      display:block;
+      width:100%;
+      border:0;
+      height:980px;
+    }
+  </style>
+
   <div class="wgap" aria-hidden="true"></div>
 
-  <!-- ===== 8) COUNTDOWN (local time) ===== -->
+
+  <!-- ===== 8) COUNTDOWN ===== -->
   <section class="wcount" aria-label="Countdown">
     <div class="wcount-wrap">
 
@@ -317,7 +1098,89 @@
     </div>
   </section>
 
+  <style>
+    /* 8) COUNTDOWN */
+    .wcount{
+      width:100%;
+      padding: 30px 0;
+      display:flex;
+      justify-content:center;
+    }
+    .wcount-wrap{
+      width:100%;
+      max-width:1100px;
+      padding:56px 40px 54px;
+      border-radius:24px;
+      background:#fff;
+      text-align:center;
+      box-shadow: 0 18px 48px rgba(0,0,0,.12);
+
+      background-image:
+        radial-gradient(circle at 14% 22%, rgba(0,0,0,0.03), transparent 38%),
+        radial-gradient(circle at 86% 30%, rgba(0,0,0,0.025), transparent 42%),
+        linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,1));
+    }
+    .wcount-title{ margin-bottom:34px; }
+
+    .wcount-grid{
+      display:flex;
+      justify-content:center;
+      gap:34px;
+      flex-wrap:wrap;
+    }
+    .wcount-col{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+    }
+    .wcount-digits{ display:flex; gap:10px; }
+
+    .wcount-box{
+      width:72px;
+      height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-family:"Lighthaus", Georgia, serif;
+      font-size:52px;
+      font-weight:400;
+      line-height:1;
+      padding:0;
+      text-align:center;
+
+      border:1px solid rgba(0,0,0,.12);
+      border-radius:14px;
+      background:#fff;
+
+      font-variant-numeric: tabular-nums;
+    }
+    .wcount-label{
+      font-size:14px;
+      letter-spacing:.08em;
+      color:#6b6b6b;
+    }
+
+    @media (max-width: 700px){
+      .wcount-wrap{
+        max-width:760px;
+        padding:44px 18px;
+        border-radius:24px;
+      }
+      .wcount-grid{ gap:18px; }
+      .wcount-digits{ gap:8px; }
+      .wcount-box{
+        width:56px;
+        height:68px;
+        font-size:40px;
+        border-radius:12px;
+      }
+    }
+  </style>
+
   <div class="wgap" aria-hidden="true"></div>
+
 
   <!-- ===== 9) CONTACTS ===== -->
   <section class="wcont" id="contacts" aria-label="Contacts">
@@ -330,7 +1193,6 @@
         </div>
       </div>
 
-      <!-- верхние контакты (2 карточки) -->
       <div class="wcont-grid wcont-grid--top">
 
         <div class="wcont-card">
@@ -370,7 +1232,6 @@
 
       </div>
 
-      <!-- нижние 2 колонки -->
       <div class="wcont-grid wcont-grid--bottom">
 
         <div class="wcont-card wcont-card--soft">
@@ -426,8 +1287,165 @@
     </div>
   </section>
 
+  <style>
+    /* 9) CONTACTS */
+    .wcont{
+      width:100%;
+      padding: 30px 0;
+      display:flex;
+      justify-content:center;
+    }
+    .wcont-wrap{
+      width:100%;
+      max-width:1100px;
+      padding:60px 40px;
+      border-radius:24px;
+      overflow:hidden;
+      position:relative;
+      text-align:center;
+      background: var(--bg);
+    }
+
+    .wcont-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-22px;
+      background-image:
+        linear-gradient(180deg, rgba(255,255,255,.46), rgba(255,255,255,.20)),
+        var(--hero-bg);
+      background-size: cover;
+      background-position:center;
+      filter: blur(14px);
+      opacity:.50;
+      transform: scale(1.08);
+      z-index:0;
+    }
+    .wcont-wrap::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        radial-gradient(circle at 12% 18%, rgba(0,0,0,0.035), transparent 35%),
+        radial-gradient(circle at 80% 28%, rgba(0,0,0,0.03), transparent 40%),
+        radial-gradient(circle at 50% 85%, rgba(0,0,0,0.03), transparent 45%),
+        linear-gradient(180deg, rgba(255,255,255,0.40), rgba(255,255,255,0.08));
+      z-index:1;
+      pointer-events:none;
+    }
+    .wcont-wrap > *{ position:relative; z-index:2; }
+
+    .wcont-sub{
+      font-size:18px;
+      line-height:1.6;
+      color:#3c3c3c;
+      margin: 0 auto 34px;
+      max-width: 760px;
+    }
+
+    .wcont-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      text-align:left;
+    }
+
+    .wcont-grid--top{ margin-bottom: 22px; }
+
+    .wcont-card{
+      background: rgba(255,255,255,.74);
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.06);
+      position:relative;
+      overflow:visible;
+    }
+
+    .wcont-card--soft{ background: rgba(255,255,255,.62); }
+
+    .wcont-name{
+      font-family:"Lighthaus", Georgia, serif;
+      font-weight:400;
+      letter-spacing:.05em;
+      font-size: 22px;
+      color:#2a2a2a;
+      margin-bottom: 10px;
+    }
+
+    .wcont-row{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:#3c3c3c;
+      padding: 8px 10px;
+      border-radius: 12px;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .wcont-row:hover{
+      background: rgba(193,74,99,.08);
+      transform: translateY(-1px);
+    }
+
+    .wcont-ico{
+      width:34px;
+      height:34px;
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--accent);
+      background: rgba(193,74,99,.10);
+      flex: 0 0 auto;
+    }
+
+    .wcont-link{
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: .02em;
+    }
+
+    .wcont-text{
+      font-size: 16px;
+      letter-spacing: .02em;
+    }
+
+    /* Sticker notes */
+    .wcont-sticker{
+      position:absolute;
+      top:14px;
+      right:-12px;
+      width:min(260px, 72%);
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:10px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.10);
+      padding:10px 12px;
+      font-size:13px;
+      line-height:1.35;
+      color:#6b6b6b;
+      transform: rotate(5deg);
+      transform-origin: right top;
+      letter-spacing:.01em;
+    }
+    .wcont-sticker::before{
+      content:"";
+      position:absolute;
+      right:14px;
+      top:-8px;
+      width:38px;
+      height:16px;
+      background: rgba(193,74,99,.12);
+      border: 1px solid rgba(193,74,99,.18);
+      border-radius: 6px;
+      transform: rotate(-8deg);
+    }
+    .wcont-sticker--alt{ transform: rotate(-4deg); }
+    .wcont-card--soft{ padding-top:64px; }
+  </style>
 
   <div class="wgap" aria-hidden="true"></div>
+
 
   <!-- ===== 10) FINAL ===== -->
   <section class="wfinal" aria-label="Final">
@@ -468,1079 +1486,87 @@
     </div>
   </section>
 
+  <style>
+    /* 10) FINAL */
+    .wfinal{
+      width:100%;
+      padding: 24px 20px 60px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wfinal-wrap{
+      width:100%;
+      max-width:980px;
+      margin: 0 auto;
+      padding: 20px 10px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 44px;
+    }
+
+    .wfinal-photos{
+      display:flex;
+      align-items:flex-start;
+      gap: 0;
+      flex: 0 0 auto;
+    }
+
+    .wfinal-pol{
+      width: min(44vw, 220px);
+      background: var(--frame);
+      padding: 12px 12px 10px;
+      border-radius: 6px;
+      box-shadow: var(--shadow);
+    }
+
+    .wfinal-pol--left{ transform: rotate(-7deg) translateY(-4px); z-index: 1; }
+    .wfinal-pol--right{ transform: rotate(6deg) translateY(6px); margin-left: -18px; z-index: 2; }
+
+    .wfinal-img{
+      width:100%;
+      aspect-ratio: 1 / 1;
+      border-radius:4px;
+      overflow:hidden;
+      background:#e9e9e9;
+    }
+    .wfinal-img img{ width:100%; height:100%; object-fit:cover; }
+
+    .wfinal-text{ flex: 1 1 auto; text-align:left; }
+
+    .wfinal-love{
+      margin-top:14px;
+      font-size: clamp(25px, 25vw, 80px);
+      letter-spacing:.02em;
+      color: var(--accent);
+      line-height:1.1;
+    }
+    .wfinal-names{
+      margin-top:6px;
+      font-size: clamp(25px, 25vw, 80px);
+      letter-spacing:.02em;
+      color: var(--accent);
+      line-height:1.1;
+    }
+
+    .wfinal-heart{
+      display:inline-block;
+      margin-left: 10px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align:center;
+      border-radius: 999px;
+      background: rgba(193,74,99,.10);
+      color: var(--accent);
+      transform: translate(6px, 4px);
+    }
+  </style>
+
 </div>
 
-<style>
-  @font-face{
-    font-family: "Lighthaus";
-    src: url("Lighthaus.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  /* ✅ FIX: .otf = opentype */
-  @font-face{
-    font-family: "Bella Script CYR";
-    src: url("Bella Script CYR.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  /* ✅ FIX: убираем горизонтальный скролл везде */
-  html, body{
-    margin:0;
-    padding:0;
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-  }
-
-  img { max-width:100%; height:auto; display:block; }
-
-  html { scroll-behavior: smooth; }
-  #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 86px; }
-
-  .wsite{
-    --bg:#f3f3f3;
-    --text:#1b1b1b;
-    --muted:#8a8a8a;
-    --frame:#ffffff;
-    --shadow:0 16px 34px rgba(0,0,0,.16);
-    --accent:#c14a63;
-
-    --hero-bg:url("https://drive.google.com/thumbnail?id=1TiCwhbj88DsfT4pjp5q8iWbknVZoRSVS&sz=w2000");
-
-    width:100%;
-    max-width:100%;
-    overflow-x:hidden;
-
-    color:var(--text);
-    font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  }
-  .wsite *{ box-sizing:border-box; }
-
-  .wgap{ height: 34px; }
-  .wgap--sm{ height: 26px; }
-
-  /* ===== Bella Script CYR: единый стиль без лишнего воздуха ===== */
-  .wpol-top,
-  .winvite-date,
-  .wtimeline-time,
-  .wform-date,
-  .wfinal-love,
-  .wfinal-names{
-    font-family: "Bella Script CYR", cursive;
-    line-height: 1;
-    padding: 0;
-    margin: 0;
-  }
-
-
-  /* Big section titles */
-  .wplace-top,
-  .wtiming-title,
-  .wdress-title,
-  .wform-heading,
-  .wcont-title{
-    font-family:"Lighthaus", Georgia, serif;
-    font-weight:400;
-    font-size: clamp(28px, 3.0vw, 36px); /* аккуратнее на десктопе */
-    text-transform:uppercase;
-    color:#2a2a2a;
-  }
-
-  /* POLAROIDS date */
-  .wpol-date{
-    width:150px;
-    text-align:center;
-    color:var(--muted);
-    font-family:"Lighthaus", Georgia, serif;
-    font-weight:400;
-    letter-spacing:.05em;
-    line-height:1;
-    user-select:none;
-    text-transform:none;
-  }
-  .wpol-date .d{
-    font-size:54px;
-    opacity:.9;
-    margin: 10px 0;
-  }
-
-  /* Calendar month */
-  .wcal-month{
-    font-family:"Lighthaus", Georgia, serif;
-    font-weight:400;
-    font-size: clamp(28px, 3.0vw, 36px);
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:#2a2a2a;
-    margin-bottom:22px;
-  }
-
-  /* Countdown title */
-  .wcount-title{
-    font-family:"Lighthaus", Georgia, serif;
-    font-weight:400;
-    font-size: clamp(28px, 3.0vw, 36px);
-    letter-spacing:.07em;
-    text-transform:uppercase;
-    color:#2a2a2a;
-  }
-
-  /* Names (POLAROIDS) */
-  .wpol-names .name{
-    font-family:"Lighthaus", Georgia, serif;
-    font-weight:400;
-    font-size: clamp(34px, 4.8vw, 58px); 
-    letter-spacing:.05em;
-    color:#2a2a2a;
-  }
-
-  /* Final title */
-  .wfinal-top{
-    font-family:"Lighthaus", Georgia, serif;
-    font-weight:400;
-    font-size: clamp(30px, 3.3vw, 40px);
-    letter-spacing:.05em;
-    color:#2a2a2a;
-  }
-
-  /* Body text reference */
-  .winvite-text{
-    font-size: clamp(15px, 1.9vw, 20px);
-    line-height:1.6;
-    color:#3c3c3c;
-    letter-spacing:0.01em;
-  }
-
-  /* Make "Ресторан NOVO, 2 этаж" same as invite body (Montserrat) */
-  .wplace-name{
-    font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    font-weight:400;
-    font-size: clamp(15px, 1.9vw, 22px);
-    line-height:1.6;
-    color:#3c3c3c;
-    letter-spacing:0.01em;
-    margin-top:20px;
-    margin-bottom:10px;
-  }
-
-  /* ===== HEADER NAV ===== */
-  .whead{
-    position: sticky;
-    top: 0;
-    z-index: 50;
-
-    background: rgba(243,243,243,.82);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border-bottom: 1px solid rgba(0,0,0,.06);
-  }
-
-  .whead-wrap{
-    max-width:1100px;
-    margin:0 auto;
-    padding: 16px 22px;
-
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap: 18px;
-  }
-
-  .whead-nav{
-    display:flex;
-    align-items:center;
-    gap: 26px;
-    flex-wrap: wrap;
-  }
-
-  .whead-link{
-    text-decoration:none;
-    color: var(--accent);
-    font-size: 16px;
-    letter-spacing: .02em;
-    line-height: 1.2;
-    padding: 6px 2px;
-    border-bottom: 1px solid transparent;
-    transition: border-color .15s ease, transform .15s ease;
-  }
-  .whead-link:hover{
-    border-bottom-color: rgba(193,74,99,.55);
-    transform: translateY(-1px);
-  }
-
-  .whead-actions{
-    display:flex;
-    align-items:center;
-    gap: 12px;
-    flex: 0 0 auto;
-  }
-
-  .whead-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding: 12px 18px;
-    border-radius: 10px;
-
-    border: 2px solid rgba(193,74,99,.65);
-    color: var(--accent);
-    text-decoration:none;
-
-    font-size:16px;
-    letter-spacing:.02em;
-    white-space: nowrap;
-
-    transition: transform .15s ease, background .15s ease;
-  }
-  .whead-btn:hover{
-    background: rgba(193,74,99,.08);
-    transform: translateY(-1px);
-  }
-
-  /* Burger */
-  .wburger{
-    width:44px;
-    height:44px;
-    border-radius:12px;
-    border:1px solid rgba(0,0,0,.08);
-    background:rgba(255,255,255,.65);
-    cursor:pointer;
-
-    display:none;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-  }
-
-  .wburger span{
-    position:absolute;
-    width:20px;
-    height:2px;
-    background:var(--accent);
-    border-radius:2px;
-    transition: transform .3s ease, opacity .3s ease;
-  }
-
-  .wburger span:nth-child(1){ transform: translateY(-6px); }
-  .wburger span:nth-child(2){ transform: translateY(0); }
-  .wburger span:nth-child(3){ transform: translateY(6px); }
-
-  .wburger.is-open span:nth-child(1){ transform: rotate(45deg); }
-  .wburger.is-open span:nth-child(2){ opacity:0; }
-  .wburger.is-open span:nth-child(3){ transform: rotate(-45deg); }
-
-  /* Mobile dropdown panel */
-  .wmnav{
-    max-width:1100px;
-    margin: 0 auto;
-    padding: 0 22px 14px;
-  }
-  .wmnav-card{
-    background: rgba(255,255,255,.78);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border: 1px solid rgba(0,0,0,.06);
-    border-radius: 16px;
-    box-shadow: 0 14px 34px rgba(0,0,0,.10);
-
-    padding: 10px;
-    display:flex;
-    flex-direction:column;
-    gap: 6px;
-  }
-  .wmnav-link{
-    text-decoration:none;
-    color:#3c3c3c;
-    padding: 12px 12px;
-    border-radius: 12px;
-    letter-spacing:.02em;
-    transition: background .15s ease, transform .15s ease;
-  }
-  .wmnav-link:hover{
-    background: rgba(193,74,99,.08);
-    transform: translateY(-1px);
-  }
-
-  /* 1) POLAROIDS */
-  .wpol{
-    width:100%;
-    padding: 20px 0 0;
-    display:flex;
-    justify-content:center;
-  }
-  .wpol-wrap{
-    width:100%;
-    max-width:1100px;
-    margin:0 auto;
-    padding:46px 22px 46px;
-    text-align:center;
-
-    border-radius:24px;
-    overflow:hidden;
-
-    background-image:
-      linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.25)),
-      var(--hero-bg);
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .wpol-top{
-    font-size: clamp(26px, 10vw, 100px);
-    color:var(--accent);
-    letter-spacing:0.05em;
-    margin-bottom:38px; /* чуть меньше воздуха */
-  }
-
-  .wpol-row{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:46px;
-    flex-wrap:nowrap;
-  }
-
-  .pol{
-    width:min(270px, 42vw);
-    background:var(--frame);
-    padding:14px 14px 12px;
-    border-radius:6px;
-    box-shadow:var(--shadow);
-  }
-  .pol-left{ transform: rotate(-8deg) translateY(-16px); }
-  .pol-right{ transform: rotate(7deg) translateY(10px); }
-  .pol-img{
-    width:100%;
-    aspect-ratio:1/1;
-    border-radius:4px;
-    overflow:hidden;
-    background:#e9e9e9;
-  }
-  .pol img{ width:100%; height:100%; object-fit:cover; }
-  .pol-cap{
-    margin-top:9px;
-    min-height:24px;
-    font-size:13px;
-    color:#2a2a2a;
-    opacity:.92;
-    text-align:left;
-  }
-
-  .wpol-names{
-    display:flex;
-    align-items:baseline;
-    justify-content:center;
-    gap:22px;
-    margin-top:46px;
-    white-space:nowrap;
-  }
-  .wpol-names .plus{
-    font-weight:300;
-    font-size: 28px;
-    color:var(--muted);
-    transform: translateY(-6px);
-    flex: 0 0 auto;
-  }
-  .wpol-date-line{
-    display:none;
-    margin-top:14px;
-    font-weight:400;
-    letter-spacing:0.14em;
-    color:#5f5f5f;
-    font-size:14px;
-  }
-
-  /* 2) INVITE TEXT */
-  .winvite{ width:100%; padding: 40px 20px; text-align:center; }
-  .winvite-wrap{ max-width:720px; margin:0 auto; }
-
-  .winvite-date{
-    margin-top:6px;     /* меньше воздуха */
-    font-size:72px;     /* чуть компактнее */
-    color:var(--accent);
-    letter-spacing:0.05em;
-  }
-
-  /* 3) CALENDAR */
-  .wcal{ width:100%; padding:0 20px 40px; }
-  .wcal-card{
-    background:var(--bg);
-    border-radius:24px;
-    padding:28px 28px 36px;
-    max-width:560px;
-    margin:0 auto;
-  }
-  .wcal-wrap{ max-width:500px; margin:0 auto; text-align:center; }
-
-  .weekdays, .days{
-    display:grid;
-    grid-template-columns: repeat(7, 1fr);
-    row-gap:14px;
-    column-gap:6px;
-    margin:0 auto;
-    width:100%;
-    max-width:none;
-  }
-
-  .weekdays{ margin-bottom:14px; }
-
-  .weekdays div{
-    font-size:14px;
-    color:#9a9a9a;
-    letter-spacing:0.08em;
-    font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  }
-  .days div{
-    font-size:14px;
-    height:28px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  }
-
-  .highlight::before{
-    content:"";
-    position:absolute;
-    width:28px;
-    height:28px;
-    border:1.4px solid var(--accent);
-    border-radius:50%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    pointer-events:none;
-  }
-
-  /* 4) PLACE */
-  .wplace{ width:100%; padding: 18px 20px; background: transparent; }
-  .wplace-wrap{
-    max-width:1100px;
-    margin:0 auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:46px;
-  }
-  .wplace-left{ flex: 1 1 520px; min-width: 280px; }
-
-  .wplace-addr{
-    font-size: clamp(14px, 1.7vw, 18px);
-    line-height:1.55;
-    color:#6b6b6b;
-    margin-bottom:20px;
-  }
-
-  .wplace-link{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    color: var(--accent);
-    text-decoration:none;
-    font-size:16px;
-    letter-spacing:0.02em;
-    padding:10px 14px;
-    border:1.4px solid rgba(193,74,99,.55);
-    border-radius:999px;
-    transition: transform .15s ease, background .15s ease;
-  }
-  .wplace-link:hover{ background: rgba(193,74,99,.06); transform: translateY(-1px); }
-
-  .wplace-right{
-    flex: 0 0 min(520px, 46vw);
-    display:flex;
-    justify-content:flex-end;
-  }
-  .wplace-photo{
-    width:100%;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow: none;
-    background:#e9e9e9;
-  }
-  .wplace-photo img{ width:100%; height:auto; object-fit:cover; }
-
-  /* 5) TIMING */
-  .wtiming{ width:100%; padding: 30px 0; display:flex; justify-content:center; }
-
-  .wtiming-wrap{
-    width:100%;
-    max-width:1100px;
-    padding:60px 40px;
-    border-radius:24px;
-    overflow:hidden;
-    position:relative;
-    text-align:center;
-    background: var(--bg);
-  }
-
-  .wtiming-wrap::before{
-    content:"";
-    position:absolute;
-    inset:-22px;
-    background-image:
-      linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,.22)),
-      var(--hero-bg);
-    background-size: cover;
-    background-position: center;
-    filter: blur(14px);
-    opacity:.55;
-    transform: scale(1.08);
-    z-index:0;
-  }
-
-  .wtiming-wrap::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-      radial-gradient(circle at 12% 18%, rgba(0,0,0,0.035), transparent 35%),
-      radial-gradient(circle at 80% 28%, rgba(0,0,0,0.03), transparent 40%),
-      radial-gradient(circle at 50% 85%, rgba(0,0,0,0.03), transparent 45%),
-      linear-gradient(180deg, rgba(255,255,255,0.40), rgba(255,255,255,0.08));
-    z-index:1;
-    pointer-events:none;
-  }
-
-  .wtiming-wrap > *{ position:relative; z-index:2; }
-
-  .wtiming-title{ margin-bottom:50px; }
-
-  .wtimeline{ display:flex; flex-direction:column; gap:40px; }
-  .wtimeline-item{ display:flex; flex-direction:column; align-items:center; gap:10px; }
-
-  .wtimeline-time{
-    font-size: clamp(25px, 25vw, 80px);
-    color:var(--accent);
-    letter-spacing:.05em;
-    line-height:1;
-    margin-bottom:2px;
-  }
-  .wtimeline-text{
-    font-size: clamp(14px, 1.8vw, 18px);
-    letter-spacing:.06em;
-    color:#3c3c3c;
-    line-height:1.4;
-  }
-
-  /* 6) DRESS CODE */
-  .wdress{ width:100%; padding: 40px 20px; }
-  .wdress-wrap{
-    max-width:1100px;
-    margin:0 auto;
-    display:flex;
-    align-items:flex-start;
-    gap:60px;
-  }
-  .wdress-left{ flex: 1 1 620px; min-width:280px; }
-  .wdress-title{ margin-bottom:26px; }
-
-  .wdress-text, .wdress-point{
-    font-size: clamp(15px, 1.8vw, 18px);
-    line-height:1.7;
-    color:#3c3c3c;
-  }
-  .wdress-text{ margin-bottom:18px; }
-  .wdress-point{ margin-bottom:14px; }
-  .wdress-label{ font-weight:600; color:#2a2a2a; }
-  .wdress-right{
-    flex: 0 0 min(480px, 40vw);
-    display:flex;
-    justify-content:flex-end;
-  }
-  .wdress-photo{
-    width:100%;
-    border-radius:18px;
-    overflow:hidden;
-    background:#e9e9e9;
-  }
-  .wdress-photo img{ width:100%; height:auto; object-fit:cover; }
-
-  /* 7) GUEST FORM */
-  .wform{ width:100%; padding:0 20px; display:flex; justify-content:center; }
-  .wform-card{
-    width:100%;
-    max-width:760px;
-    background:var(--bg);
-    border-radius:24px;
-    padding:34px 22px 22px;
-  }
-  .wform-wrap{ max-width:680px; margin:0 auto; text-align:center; }
-  .wform-heading{ margin-bottom:18px; }
-
-  .wform-text{
-    font-size: clamp(15px, 1.9vw, 18px);
-    line-height:1.6;
-    color:#3c3c3c;
-    margin:0 auto 18px;
-  }
-  .wform-date{
-  font-family: "Bella Script CYR", cursive;
-  font-size: 72px;      
-  color: var(--accent);
-  letter-spacing: 0.05em;  
-  line-height: 1;
-  margin: 0;
-}
-  .wform-embed{
-    width:100%;
-    border-radius:16px;
-    overflow:hidden;
-    background:#fff;
-  }
-  .wform-iframe{
-    display:block;
-    width:100%;
-    border:0;
-    height:980px;
-  }
-
-  /* 8) COUNTDOWN */
-  .wcount{
-    width:100%;
-    padding: 30px 0;
-    display:flex;
-    justify-content:center;
-  }
-  .wcount-wrap{
-    width:100%;
-    max-width:1100px;
-    padding:56px 40px 54px;
-    border-radius:24px;
-    background:#fff;
-    text-align:center;
-    box-shadow: 0 18px 48px rgba(0,0,0,.12);
-
-    background-image:
-      radial-gradient(circle at 14% 22%, rgba(0,0,0,0.03), transparent 38%),
-      radial-gradient(circle at 86% 30%, rgba(0,0,0,0.025), transparent 42%),
-      linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,1));
-  }
-  .wcount-title{ margin-bottom:34px; }
-
-  .wcount-grid{
-    display:flex;
-    justify-content:center;
-    gap:34px;
-    flex-wrap:wrap;
-  }
-  .wcount-col{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-  }
-  .wcount-digits{ display:flex; gap:10px; }
-
-  .wcount-box{
-    width:72px;
-    height:86px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-family:"Lighthaus", Georgia, serif;
-    font-size:52px;
-    font-weight:400;
-    line-height:1;
-    padding:0;
-    text-align:center;
-
-    border:1px solid rgba(0,0,0,.12);
-    border-radius:14px;
-    background:#fff;
-
-    font-variant-numeric: tabular-nums;
-  }
-  .wcount-label{
-    font-size:14px;
-    letter-spacing:.08em;
-    color:#6b6b6b;
-  }
-
-  /* 9) CONTACTS */
-  .wcont{
-    width:100%;
-    padding: 30px 0;
-    display:flex;
-    justify-content:center;
-  }
-  .wcont-wrap{
-    width:100%;
-    max-width:1100px;
-    padding:60px 40px;
-    border-radius:24px;
-    overflow:hidden;
-    position:relative;
-    text-align:center;
-    background: var(--bg);
-  }
-
-  .wcont-wrap::before{
-    content:"";
-    position:absolute;
-    inset:-22px;
-    background-image:
-      linear-gradient(180deg, rgba(255,255,255,.46), rgba(255,255,255,.20)),
-      var(--hero-bg);
-    background-size: cover;
-    background-position:center;
-    filter: blur(14px);
-    opacity:.50;
-    transform: scale(1.08);
-    z-index:0;
-  }
-  .wcont-wrap::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-      radial-gradient(circle at 12% 18%, rgba(0,0,0,0.035), transparent 35%),
-      radial-gradient(circle at 80% 28%, rgba(0,0,0,0.03), transparent 40%),
-      radial-gradient(circle at 50% 85%, rgba(0,0,0,0.03), transparent 45%),
-      linear-gradient(180deg, rgba(255,255,255,0.40), rgba(255,255,255,0.08));
-    z-index:1;
-    pointer-events:none;
-  }
-  .wcont-wrap > *{ position:relative; z-index:2; }
-
-  .wcont-sub{
-    font-size:18px;
-    line-height:1.6;
-    color:#3c3c3c;
-    margin: 0 auto 34px;
-    max-width: 760px;
-  }
-
-  .wcont-grid{
-    display:grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-    text-align:left;
-  }
-
-  .wcont-grid--top{ margin-bottom: 22px; }
-
-  .wcont-card{
-    background: rgba(255,255,255,.74);
-    border: 1px solid rgba(0,0,0,.06);
-    border-radius: 18px;
-    padding: 18px 18px 16px;
-    box-shadow: 0 10px 24px rgba(0,0,0,.06);
-    position:relative;
-    overflow:visible;
-  }
-
-  .wcont-card--soft{ background: rgba(255,255,255,.62); }
-
-  .wcont-name{
-    font-family:"Lighthaus", Georgia, serif;
-    font-weight:400;
-    letter-spacing:.05em;
-    font-size: 22px;
-    color:#2a2a2a;
-    margin-bottom: 10px;
-  }
-
-  .wcont-row{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    color:#3c3c3c;
-    padding: 8px 10px;
-    border-radius: 12px;
-    transition: background .15s ease, transform .15s ease;
-  }
-  .wcont-row:hover{
-    background: rgba(193,74,99,.08);
-    transform: translateY(-1px);
-  }
-
-  .wcont-ico{
-    width:34px;
-    height:34px;
-    border-radius: 12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color: var(--accent);
-    background: rgba(193,74,99,.10);
-    flex: 0 0 auto;
-  }
-
-  .wcont-link{
-    color: var(--accent);
-    font-weight: 500;
-    letter-spacing: .02em;
-  }
-
-  .wcont-text{
-    font-size: 16px;
-    letter-spacing: .02em;
-  }
-
-  /* Sticker notes */
-  .wcont-sticker{
-    position:absolute;
-    top:14px;
-    right:-12px;
-    width:min(260px, 72%);
-    background:#fff;
-    border:1px solid rgba(0,0,0,.08);
-    border-radius:10px;
-    box-shadow: 0 12px 26px rgba(0,0,0,.10);
-    padding:10px 12px;
-    font-size:13px;
-    line-height:1.35;
-    color:#6b6b6b;
-    transform: rotate(5deg);
-    transform-origin: right top;
-    letter-spacing:.01em;
-  }
-  .wcont-sticker::before{
-    content:"";
-    position:absolute;
-    right:14px;
-    top:-8px;
-    width:38px;
-    height:16px;
-    background: rgba(193,74,99,.12);
-    border: 1px solid rgba(193,74,99,.18);
-    border-radius: 6px;
-    transform: rotate(-8deg);
-  }
-  .wcont-sticker--alt{ transform: rotate(-4deg); }
-  .wcont-card--soft{ padding-top:64px; }
-
-  /* 10) FINAL */
-  .wfinal{
-    width:100%;
-    padding: 24px 20px 60px;
-    display:flex;
-    justify-content:center;
-  }
-
-  .wfinal-wrap{
-    width:100%;
-    max-width:980px;
-    margin: 0 auto;
-    padding: 20px 10px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 44px;
-  }
-
-  .wfinal-photos{
-    display:flex;
-    align-items:flex-start;
-    gap: 0;
-    flex: 0 0 auto;
-  }
-
-  .wfinal-pol{
-    width: min(44vw, 220px);
-    background: var(--frame);
-    padding: 12px 12px 10px;
-    border-radius: 6px;
-    box-shadow: var(--shadow);
-  }
-
-  .wfinal-pol--left{ transform: rotate(-7deg) translateY(-4px); z-index: 1; }
-  .wfinal-pol--right{ transform: rotate(6deg) translateY(6px); margin-left: -18px; z-index: 2; }
-
-  .wfinal-img{
-    width:100%;
-    aspect-ratio: 1 / 1;
-    border-radius:4px;
-    overflow:hidden;
-    background:#e9e9e9;
-  }
-  .wfinal-img img{ width:100%; height:100%; object-fit:cover; }
-
-  .wfinal-text{ flex: 1 1 auto; text-align:left; }
-
-  .wfinal-love{
-    margin-top:14px;
-    font-size: clamp(25px, 25vw, 80px);
-    letter-spacing:.02em;
-    color: var(--accent);
-    line-height:1.1;
-  }
-  .wfinal-names{
-    margin-top:6px;
-    font-size: clamp(25px, 25vw, 80px);
-    letter-spacing:.02em;
-    color: var(--accent);
-    line-height:1.1;
-  }
-
-  .wfinal-heart{
-    display:inline-block;
-    margin-left: 10px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align:center;
-    border-radius: 999px;
-    background: rgba(193,74,99,.10);
-    color: var(--accent);
-    transform: translate(6px, 4px);
-  }
-
-  /* ==========================
-     RESPONSIVE
-     ========================== */
-
-  @media (max-width: 990px){
-    .whead-nav{ display:none; }
-    .wburger{ display:flex; }
-  }
-
-  @media (max-width: 780px){
-    .wplace-wrap{
-      flex-direction: column;
-      align-items: stretch;
-      gap: 25px;
-    }
-    .wplace-left,
-    .wplace-right{
-      flex: 0 0 auto !important;
-      width: 100%;
-      min-width: 0;
-      margin: 0 !important;
-    }
-    .wplace-right{ justify-content:flex-start; }
-    .wplace-top{ margin-bottom: 14px; }
-    .wplace-addr{ margin-bottom: 20px; }
-  }
-
-  @media (max-width: 780px){
-    .wdress-wrap{
-      flex-direction: column;
-      align-items: stretch;
-      gap: 25px;
-    }
-    .wdress-left,
-    .wdress-right{
-      flex: 0 0 auto !important;
-      width: 100%;
-      min-width: 0;
-      margin: 0 !important;
-    }
-    .wdress-right{ justify-content:flex-start; }
-    .wdress-title{ margin-bottom: 14px; }
-    .wdress-text{ margin-bottom: 12px; }
-  }
-
-  @media (max-width: 700px){
-    .wcount-wrap{
-      max-width:760px;
-      padding:44px 18px;
-      border-radius:24px;
-    }
-    .wcount-grid{ gap:18px; }
-    .wcount-digits{ gap:8px; }
-    .wcount-box{
-      width:56px;
-      height:68px;
-      font-size:40px;
-      border-radius:12px;
-    }
-  }
-
-  @media (max-width: 560px){
-    #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 72px; }
-
-    .whead-wrap{
-      padding: 12px 14px;
-      justify-content: flex-end;
-      gap: 12px;
-    }
-
-    .whead-btn{
-      font-size: 14px;
-      padding: 10px 12px;
-    }
-
-    .wmnav{ padding: 0 14px 14px; }
-
-    .wpol{ padding:0; }
-    .wpol-wrap{ padding:42px 20px; border-radius:0; max-width:100%; }
-
-    .wcal{ padding:0 14px 34px; }
-    .wcal-card{ padding:24px 28px 28px; max-width:520px; }
-
-    .wplace{ padding: 12px 20px; }
-    .wplace-wrap{ gap:25px; }
-
-    .wtiming{ padding:0; }
-    .wtiming-wrap{ padding:50px 20px; border-radius:0; max-width:100%; }
-
-    .wform{ padding:0 14px; }
-    .wform-card{ padding:26px 14px 14px; border-radius:24px; }
-    .wform-iframe{ height:1100px; }
-
-    .wcount{ padding:0; }
-    .wcount-wrap{
-      border-radius:0;
-      max-width:100%;
-      padding:44px 18px;
-      box-shadow:none;
-    }
-
-    .wpol-row{ position:relative; gap:0; justify-content:center; align-items:flex-start; }
-    .wpol-date{ display:none; }
-    .wpol-date-line{ display:block; }
-
-    .pol{ width: min(46vw, 220px); padding:12px 12px 10px; }
-    .pol-left{ transform: rotate(-7deg) translateY(-6px); z-index:1; }
-    .pol-right{ transform: rotate(6deg) translateY(8px); margin-left:-18px; z-index:2; }
-    .pol-cap{ font-size:12px; }
-
-    .wpol-names{ gap:14px; margin-top:42px; }
-    .wpol-names .name{ font-size: clamp(20px, 6.2vw, 36px); }
-    .wpol-names .plus{ font-size: clamp(16px, 4.8vw, 22px); transform: translateY(-3px); }
-
-    .winvite-date{ font-size: 30px; }
-
-    .wplace-top, .wtiming-title, .wdress-title, .wform-heading, .wcont-title{
-      font-size: clamp(32px, 9vw, 44px);
-    }
-
-    .wcont{ padding:0; }
-    .wcont-wrap{ border-radius:0; max-width:100%; padding:50px 20px; }
-    .wcont-grid{ grid-template-columns: 1fr; }
-    .wcont-card--soft{ padding-top:76px; }
-    .wcont-sticker{ right:-10px; width:min(280px, 84%); }
-
-    .wfinal{ padding: 0; }
-    .wfinal-wrap{
-      max-width:100%;
-      padding: 44px 18px 54px;
-      flex-direction: column;
-      align-items: stretch;
-      text-align:center;
-      gap: 28px;
-    }
-    .wfinal-text{ text-align:center; }
-    .wfinal-love, .wfinal-names{ text-align:center; }
-    .wfinal-photos{ justify-content:center; }
-  }
-</style>
 
 <script>
 document.addEventListener("DOMContentLoaded", function(){
