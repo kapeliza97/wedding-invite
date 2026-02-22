@@ -1375,28 +1375,31 @@
 .wcont-card--withphoto{
   display:flex;
   align-items: stretch;
-  padding:0;
-  overflow:hidden;
+  gap: 22px;                 /* ровно как твои отступы */
+  padding: 22px;             /* сохраняем 22px внутри карточки */
+  overflow: hidden;          /* чтобы не вылезало за скругление */
 }
 
+/* левая часть */
 .wcont-card--withphoto .wcont-left{
-  flex:1 1 auto;
-  padding:22px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
+/* правая часть под SVG */
 .wcont-card--withphoto .wcont-photo{
-  flex:0 0 160px;
+  flex: 0 0 160px;           /* ширина правой колонки (можешь менять) */
   display:flex;
-  align-items:stretch;
-  justify-content:center;
-  background: rgba(255,255,255,.35);
+  align-items: stretch;       /* тянем контейнер по высоте */
+  justify-content: center;
 }
 
+/* сам SVG */
 .wcont-card--withphoto .wcont-photo img{
-  height:100%;
-  width:auto;
-  max-width:100%;
-  object-fit:contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* вписывается, не обрезается */
+  display:block;
 }
 
 </style>
@@ -1535,6 +1538,9 @@
       text-align:center;
       gap: 28px;
     }
+  .wcont-card--withphoto .wcont-photo{
+    flex-basis: 140px;
+  }
     .wfinal-text{ text-align:center; }
     .wfinal-love, .wfinal-names{ text-align:center; }
     .wfinal-photos{ justify-content:center; }
