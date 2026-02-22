@@ -197,8 +197,6 @@
           <div class="wtimeline-time">22:00</div>
           <div class="wtimeline-text">Завершение вечера и дискотека</div>
         </div>
-
-  
       </div>
 
     </div>
@@ -232,7 +230,8 @@
 
       <div class="wdress-right">
         <div class="wdress-photo">
-          <img src="https://drive.google.com/thumbnail?id=1CekmVqyR20nMRUj7v6STwrl4xaaGjnUK&sz=w2000"
+          <img
+            src="https://drive.google.com/thumbnail?id=1CekmVqyR20nMRUj7v6STwrl4xaaGjnUK&sz=w2000"
             alt="Dress code"
             loading="lazy"
           />
@@ -469,7 +468,9 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Caveat:wght@600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
-  html, body { margin:0; padding:0; }
+  /* ✅ FIX: prevent horizontal shift */
+  html, body { margin:0; padding:0; overflow-x:hidden; }
+
   img { max-width:100%; height:auto; display:block; }
 
   html { scroll-behavior: smooth; }
@@ -486,6 +487,8 @@
     --hero-bg:url("https://drive.google.com/thumbnail?id=1TiCwhbj88DsfT4pjp5q8iWbknVZoRSVS&sz=w2000");
 
     width:100%;
+    max-width:100vw;   /* ✅ FIX */
+    overflow-x:hidden; /* ✅ FIX */
     color:var(--text);
     font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   }
