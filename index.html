@@ -1324,23 +1324,26 @@
   }
 
   .wfinal-wrap{
-    width:100%;
-    max-width:1200px;
-    margin: 0 auto;
-    padding: 20px 10px;
+  width:100%;
+  max-width:980px;          /* верни 980 или оставь 1200, но 980 выглядит ровнее */
+  margin: 0 auto;
+  padding: 20px 10px;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 44px;
-  }
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;  /* ✅ вместо space-between */
+  gap: 44px;
+}
 
-  .wfinal-photos{
-    display:flex;
-    align-items:flex-start;
-    gap: 0;
-    flex: 0 0 auto;
-  }
+.wfinal-photos{
+  display:flex;
+  align-items:flex-start;
+  gap: 0;
+  flex: 0 0 460px;          /* ✅ резервируем место под 2 полароида */
+  justify-content:center;   /* ✅ центрируем фотки внутри своей колонки */
+}
+
+
 
   .wfinal-pol{
     width: min(44vw, 220px);
@@ -1362,7 +1365,11 @@
   }
   .wfinal-img img{ width:100%; height:100%; object-fit:cover; }
 
-  .wfinal-text{ flex: 1 1 auto; text-align:left; }
+  ..wfinal-text{
+  flex: 1 1 auto;           /* ✅ текст забирает остаток */
+  min-width: 0;
+  text-align:left;
+}
 
   .wfinal-love{
     margin-top:14px;
