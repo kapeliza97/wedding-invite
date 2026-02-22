@@ -517,12 +517,7 @@
   img { max-width:100%; height:auto; display:block; }
 
   html { scroll-behavior: smooth; }
-  #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: var(--header-h); }
-
-  /* ===== HEADER HEIGHT (for sticky) ===== */
-:root{
-  --header-h: 86px;
-}
+  #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 86px; }
 
   .wsite{
     --bg:#f3f3f3;
@@ -792,16 +787,13 @@
     transform: translateY(-1px);
   }
 
- /* 1) POLAROIDS */
-.wpol{
-  width:100%;
-  padding-top: calc(var(--header-h) + 20px);
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  display:flex;
-  justify-content:center;
-}
+  /* 1) POLAROIDS */
+  .wpol{
+    width:100%;
+    padding: 20px 0 0;
+    display:flex;
+    justify-content:center;
+  }
   .wpol-wrap{
     width:100%;
     max-width:1100px;
@@ -1356,7 +1348,7 @@
   }
   .wfinal-img img{ width:100%; height:100%; object-fit:cover; }
 
-  .wfinal-text{
+  ..wfinal-text{
   flex: 1 1 auto;           /* ✅ текст забирает остаток */
   min-width: 0;
   text-align:left;
@@ -1464,8 +1456,7 @@
   }
 
   @media (max-width: 560px){
-    :root{ --header-h: 72px; }
-#invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: var(--header-h); }
+    #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 72px; }
 
     .whead-wrap{
       padding: 12px 14px;
@@ -1480,7 +1471,7 @@
 
     .wmnav{ padding: 0 14px 14px; }
 
-    
+    .wpol{ padding:0; }
     .wpol-wrap{ padding:42px 20px; border-radius:0; max-width:100%; }
 
     .wcal{ padding:0 14px 34px; }
