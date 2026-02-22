@@ -4,6 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Свадебное приглашение</title>
+
+  <!-- Montserrat (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -466,8 +471,6 @@
 </div>
 
 <style>
-
-
   @font-face{
     font-family: "Lighthaus";
     src: url("Lighthaus.ttf") format("truetype");
@@ -476,13 +479,14 @@
     font-display: swap;
   }
 
+  /* ✅ FIX: .otf = opentype */
   @font-face{
-  font-family: "Bella Script CYR";
-  src: url("Bella Script CYR.otf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+    font-family: "Bella Script CYR";
+    src: url("Bella Script CYR.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
 
   /* ✅ FIX: убираем горизонтальный скролл везде */
   html, body{
@@ -519,6 +523,19 @@
 
   .wgap{ height: 34px; }
   .wgap--sm{ height: 26px; }
+
+  /* ===== Bella Script CYR: единый стиль без лишнего воздуха ===== */
+  .wpol-top,
+  .winvite-date,
+  .wtimeline-time,
+  .wform-date,
+  .wfinal-love,
+  .wfinal-names{
+    font-family: "Bella Script CYR", cursive;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+  }
 
 
   /* Big section titles */
@@ -778,11 +795,10 @@
   }
 
   .wpol-top{
-    font-family:"Bella Script CYR", cursive;
-    font-size: clamp(26px, 10vw, 100px)
+    font-size: clamp(26px, 10vw, 100px);
     color:var(--accent);
     letter-spacing:0.05em;
-    margin-bottom:46px;
+    margin-bottom:38px; /* чуть меньше воздуха */
   }
 
   .wpol-row{
@@ -848,9 +864,8 @@
   .winvite-wrap{ max-width:720px; margin:0 auto; }
 
   .winvite-date{
-    margin-top:10px;
-    font-family:"Bella Script CYR", cursive;
-    font-size:80px;
+    margin-top:6px;     /* меньше воздуха */
+    font-size:72px;     /* чуть компактнее */
     color:var(--accent);
     letter-spacing:0.05em;
   }
@@ -1004,12 +1019,13 @@
 
   .wtimeline{ display:flex; flex-direction:column; gap:40px; }
   .wtimeline-item{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+
   .wtimeline-time{
-    font-family:"Bella Script CYR", cursive;
-    font-size: clamp(25px, 25vw, 80px)
+    font-size: clamp(25px, 25vw, 80px);
     color:var(--accent);
     letter-spacing:.05em;
     line-height:1;
+    margin-bottom:2px;
   }
   .wtimeline-text{
     font-size: clamp(14px, 1.8vw, 18px);
@@ -1070,8 +1086,7 @@
     margin:0 auto 18px;
   }
   .wform-date{
-    margin-top:0px;
-    font-family:"Bella Script CYR", cursive;
+    margin-top:2px;
     font-size:36px;
     color:var(--accent);
     letter-spacing:0.04em;
@@ -1357,17 +1372,15 @@
   .wfinal-text{ flex: 1 1 auto; text-align:left; }
 
   .wfinal-love{
-    margin-top:20px;
-    font-family:"Bella Script CYR", cursive;
-    font-size: clamp(25px, 25vw, 80px)
+    margin-top:14px;
+    font-size: clamp(25px, 25vw, 80px);
     letter-spacing:.02em;
     color: var(--accent);
     line-height:1.1;
   }
   .wfinal-names{
-    margin-top:8px;
-    font-family:"Bella Script CYR", cursive;
-    font-size: clamp(25px, 25vw, 80px)
+    margin-top:6px;
+    font-size: clamp(25px, 25vw, 80px);
     letter-spacing:.02em;
     color: var(--accent);
     line-height:1.1;
