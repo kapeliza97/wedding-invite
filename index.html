@@ -53,10 +53,11 @@
   <!-- ===== 1) POLAROIDS ===== -->
   <section class="wpol" aria-label="Wedding hero">
     <div class="wpol-wrap">
-      <div class="wpol-top">Мы женимся!</div>
 
-      <div class="wpol-row">
-        <div class="pol pol-left">
+      <div class="wpol-top" data-anim="fade" style="--d:.00s;">Мы женимся!</div>
+
+      <div class="wpol-row" data-anim="fade" style="--d:.06s;">
+        <div class="pol pol-left anim-photo-left" data-anim="photo-left" style="--d:.20s;">
           <div class="pol-img">
             <img
               src="https://drive.google.com/thumbnail?id=1SVH-RNW7RiPmoE3q7LSvmvHVDyxjvSuY&sz=w2000"
@@ -66,13 +67,13 @@
           <div class="pol-cap">— планы на июнь?</div>
         </div>
 
-        <div class="wpol-date" aria-label="Wedding date">
+        <div class="wpol-date" aria-label="Wedding date" data-anim="fade" style="--d:.12s;">
           <div class="d">19</div>
           <div class="d">06</div>
           <div class="d">26</div>
         </div>
 
-        <div class="pol pol-right">
+        <div class="pol pol-right anim-photo-right" data-anim="photo-right" style="--d:.20s;">
           <div class="pol-img">
             <img
               src="https://drive.google.com/thumbnail?id=1KLDx1HLnSSe2H8-IV1CV9J08Z7EEjSC9&sz=w2000"
@@ -83,13 +84,13 @@
         </div>
       </div>
 
-      <div class="wpol-names" aria-label="Names">
+      <div class="wpol-names" aria-label="Names" data-anim="fade" style="--d:.12s;">
         <div class="name">СЕРГЕЙ</div>
         <div class="plus">+</div>
         <div class="name">ЕЛИЗАВЕТА</div>
       </div>
 
-      <div class="wpol-date-line" aria-label="Wedding date (mobile)">
+      <div class="wpol-date-line" aria-label="Wedding date (mobile)" data-anim="fade" style="--d:.16s;">
         19 / 06 / 26
       </div>
     </div>
@@ -98,7 +99,7 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 2) TEXT INVITE ===== -->
-  <section class="winvite" id="invite" aria-label="Invitation text">
+  <section class="winvite" id="invite" aria-label="Invitation text" data-anim="fade">
     <div class="winvite-wrap">
       <div class="winvite-text">
         Дорогие наши родные и друзья! <br><br>
@@ -112,7 +113,7 @@
   <div class="wgap wgap--sm" aria-hidden="true"></div>
 
   <!-- ===== 3) CALENDAR ===== -->
-  <section class="wcal" aria-label="Calendar">
+  <section class="wcal" aria-label="Calendar" data-anim="fade">
     <div class="wcal-card">
       <div class="wcal-wrap">
         <div class="wcal-month">ИЮНЬ 2026</div>
@@ -139,7 +140,7 @@
   <div class="wgap wgap--sm" aria-hidden="true"></div>
 
   <!-- ===== 4) PLACE ===== -->
-  <section class="wplace" id="place" aria-label="Place">
+  <section class="wplace" id="place" aria-label="Place" data-anim="fade">
     <div class="wplace-wrap">
       <div class="wplace-left">
         <div class="wplace-top">МЕСТО ПРОВЕДЕНИЯ</div>
@@ -158,7 +159,7 @@
       </div>
 
       <div class="wplace-right" aria-label="Venue photo">
-        <div class="wplace-photo">
+        <div class="wplace-photo anim-photo-right" data-anim="photo-right">
           <img
             src="https://lh3.googleusercontent.com/d/1mQgbh9PZK87VKRI5lSe-_BzlAIYJdw3s"
             alt="Ресторан NOVO"
@@ -172,7 +173,7 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 5) TIMING ===== -->
-  <section class="wtiming" id="timing" aria-label="Timing">
+  <section class="wtiming" id="timing" aria-label="Timing" data-anim="fade">
     <div class="wtiming-wrap">
 
       <div class="wtiming-title">ТАЙМИНГ</div>
@@ -205,7 +206,7 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 6) DRESS CODE ===== -->
-  <section class="wdress" id="dress" aria-label="Dress code">
+  <section class="wdress" id="dress" aria-label="Dress code" data-anim="fade">
     <div class="wdress-wrap">
 
       <div class="wdress-left">
@@ -229,7 +230,7 @@
       </div>
 
       <div class="wdress-right">
-        <div class="wdress-photo">
+        <div class="wdress-photo anim-photo-right" data-anim="photo-right">
           <img
             src="https://drive.google.com/thumbnail?id=1CekmVqyR20nMRUj7v6STwrl4xaaGjnUK&sz=w2000"
             alt="Dress code"
@@ -244,7 +245,7 @@
   <!-- ===== 7) GUEST FORM ===== -->
   <div class="wgap" aria-hidden="true"></div>
 
-  <section class="wform" id="rsvp" aria-label="Guest form">
+  <section class="wform" id="rsvp" aria-label="Guest form" data-anim="fade">
     <div class="wform-card">
       <div class="wform-wrap">
 
@@ -275,7 +276,7 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 8) COUNTDOWN (local time) ===== -->
-  <section class="wcount" aria-label="Countdown">
+  <section class="wcount" aria-label="Countdown" data-anim="fade">
     <div class="wcount-wrap">
 
       <div class="wcount-title">ДО СВАДЬБЫ ОСТАЛОСЬ</div>
@@ -315,7 +316,7 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 9) CONTACTS ===== -->
-  <section class="wcont" id="contacts" aria-label="Contacts">
+  <section class="wcont" id="contacts" aria-label="Contacts" data-anim="fade">
     <div class="wcont-wrap">
 
       <div class="wcont-head">
@@ -369,64 +370,60 @@
       <div class="wcont-grid wcont-grid--bottom">
 
         <div class="wcont-card wcont-card--soft wcont-card--withphoto">
+          <div class="wcont-left">
+            <div class="wcont-name">Алексей</div>
 
-  <div class="wcont-left">
-    <div class="wcont-name">Алексей</div>
+            <a class="wcont-row" href="https://t.me/kulpinaleksey" target="_blank" rel="noopener noreferrer">
+              <span class="wcont-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                  <path d="M9.993 15.674 9.8 18.38c.279 0 .4-.12.545-.264l1.309-1.257 2.714 1.987c.498.275.855.13.98-.46l1.777-8.328c.164-.777-.28-1.08-.762-.902L6.22 12.02c-.742.29-.731.707-.126.895l2.635.823 6.11-3.855c.287-.19.55-.085.334 .106"/>
+                </svg>
+              </span>
+              <span class="wcont-link">@kulpinaleksey</span>
+            </a>
 
-    <a class="wcont-row" href="https://t.me/kulpinaleksey" target="_blank" rel="noopener noreferrer">
-      <span class="wcont-ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
-          <path d="M9.993 15.674 9.8 18.38c.279 0 .4-.12.545-.264l1.309-1.257 2.714 1.987c.498.275.855.13.98-.46l1.777-8.328c.164-.777-.28-1.08-.762-.902L6.22 12.02c-.742.29-.731.707-.126.895l2.635.823 6.11-3.855c.287-.19.55-.085.334.106"/>
-        </svg>
-      </span>
-      <span class="wcont-link">@kulpinaleksey</span>
-    </a>
+            <a class="wcont-row" href="tel:+79159445648">
+              <span class="wcont-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"/>
+                </svg>
+              </span>
+              <span class="wcont-text">+7 915 944 5648</span>
+            </a>
+          </div>
 
-    <a class="wcont-row" href="tel:+79159445648">
-      <span class="wcont-ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"/>
-        </svg>
-      </span>
-      <span class="wcont-text">+7 915 944 5648</span>
-    </a>
-  </div>
-
-  <div class="wcont-photo">
-    <img src="./stiker-vedushiy.svg" alt="Ведущий" loading="lazy">
-  </div>
-
-</div>
+          <div class="wcont-photo anim-photo-right" data-anim="photo-right">
+            <img src="./stiker-vedushiy.svg" alt="Ведущий" loading="lazy">
+          </div>
+        </div>
 
         <div class="wcont-card wcont-card--soft wcont-card--withphoto">
+          <div class="wcont-left">
+            <div class="wcont-name">Имя</div>
 
-  <div class="wcont-left">
-    <div class="wcont-name">Имя</div>
+            <a class="wcont-row" href="https://t.me/kapeliza" target="_blank" rel="noopener noreferrer">
+              <span class="wcont-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+                  <path d="M9.993 15.674 9.8 18.38c.279 0 .4-.12.545-.264l1.309-1.257 2.714 1.987c.498.275.855.13.98-.46l1.777-8.328c.164-.777-.28-1.08-.762-.902L6.22 12.02c-.742.29-.731.707-.126.895l2.635.823 6.11-3.855c.287-.19.550-.085.334 .106"/>
+                </svg>
+              </span>
+              <span class="wcont-link">@kapeliza</span>
+            </a>
 
-    <a class="wcont-row" href="https://t.me/kapeliza" target="_blank" rel="noopener noreferrer">
-      <span class="wcont-ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
-          <path d="M9.993 15.674 9.8 18.38c.279 0 .4-.12.545-.264l1.309-1.257 2.714 1.987c.498.275.855.13.98-.46l1.777-8.328c.164-.777-.28-1.08-.762-.902L6.22 12.02c-.742.29-.731.707-.126.895l2.635.823 6.11-3.855c.287-.19.55-.085.334.106"/>
-        </svg>
-      </span>
-      <span class="wcont-link">@kapeliza</span>
-    </a>
+            <a class="wcont-row" href="tel:+79524416956">
+              <span class="wcont-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"/>
+                </svg>
+              </span>
+              <span class="wcont-text">+7 952 441 6956</span>
+            </a>
+          </div>
 
-    <a class="wcont-row" href="tel:+79524416956">
-      <span class="wcont-ico" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2Z"/>
-        </svg>
-      </span>
-      <span class="wcont-text">+7 952 441 6956</span>
-    </a>
-  </div>
-
-  <div class="wcont-photo">
-    <img src="./stiker-coordinator.svg" alt="Координатор" loading="lazy">
-  </div>
-
-</div>
+          <div class="wcont-photo anim-photo-right" data-anim="photo-right">
+            <img src="./stiker-coordinator.svg" alt="Координатор" loading="lazy">
+          </div>
+        </div>
 
       </div>
 
@@ -437,11 +434,11 @@
   <div class="wgap" aria-hidden="true"></div>
 
   <!-- ===== 10) FINAL ===== -->
-  <section class="wfinal" aria-label="Final">
+  <section class="wfinal" aria-label="Final" data-anim="fade">
     <div class="wfinal-wrap">
 
       <div class="wfinal-photos" aria-label="Photos">
-        <div class="wfinal-pol wfinal-pol--left">
+        <div class="wfinal-pol wfinal-pol--left anim-photo-left" data-anim="photo-left">
           <div class="wfinal-img">
             <img
               src="https://lh3.googleusercontent.com/d/1RBTVBDa9AmtKIedUfVNzfODmVkRpmxn-"
@@ -451,7 +448,7 @@
           </div>
         </div>
 
-        <div class="wfinal-pol wfinal-pol--right">
+        <div class="wfinal-pol wfinal-pol--right anim-photo-right" data-anim="photo-right">
           <div class="wfinal-img">
             <img
               src="https://lh3.googleusercontent.com/d/15zfMUlzAaFdITExtpttxoQ0yGOy1SQgR"
@@ -465,8 +462,7 @@
       <div class="wfinal-text">
         <div class="wfinal-top">До скорой встречи!</div>
 
-        <div class="wfinal-love">С любовью, </br> Елизавета и Сергей!
-        </div>
+        <div class="wfinal-love">С любовью,<br>Елизавета и Сергей!</div>
       </div>
 
     </div>
@@ -536,12 +532,84 @@
     color:var(--text);
     /* ✅ заменили Montserrat -> Cera Pro */
     font-family: "Cera Pro", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 400;
   }
   .wsite *{ box-sizing:border-box; }
 
   .wgap{ height: 20px; }
   .wgap--sm{ height: 16px; }
+
+  /* ==========================
+     ✅ ANIMATIONS (fade + special photos)
+     ========================== */
+
+  /* базовое скрытие (только до появления) */
+  [data-anim]{
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity .65s ease,
+      transform .65s ease;
+    will-change: opacity, transform;
+  }
+
+  /* когда элемент “в кадре” */
+  [data-anim].inview{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* небольшая задержка (можно задавать inline style="--d:.12s") */
+  [data-anim]{
+    transition-delay: var(--d, 0s);
+  }
+
+  /* Особенная анимация для фоток (въезд слева/справа) */
+  [data-anim="photo-left"]{
+    transform: translateX(-38px);
+  }
+  [data-anim="photo-right"]{
+    transform: translateX(38px);
+  }
+  [data-anim="photo-left"].inview,
+  [data-anim="photo-right"].inview{
+    transform: translateX(0);
+  }
+
+  /* ✅ Первичная загрузка:
+     1) всё появляется
+     2) затем фотки выезжают */
+  .wpol [data-anim="photo-left"],
+  .wpol [data-anim="photo-right"]{
+    /* сначала не выезжают, пока не включим класс */
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  .wpol.is-hero-photos .anim-photo-left{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .wpol.is-hero-photos .anim-photo-right{
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .wpol .anim-photo-left,
+  .wpol .anim-photo-right{
+    transition:
+      opacity .75s ease,
+      transform .75s cubic-bezier(.2,.9,.2,1);
+  }
+
+  /* уважение к настройке “уменьшить движение” */
+  @media (prefers-reduced-motion: reduce){
+    [data-anim],
+    .wpol .anim-photo-left,
+    .wpol .anim-photo-right{
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
 
   /* ===== Bella Script CYR: единый стиль без лишнего воздуха ===== */
   .wpol-top,
@@ -555,7 +623,6 @@
     padding: 0;
     margin: 0;
   }
-
 
   /* Big section titles */
   .wplace-top,
@@ -613,7 +680,7 @@
   .wpol-names .name{
     font-family:"Lighthaus", Georgia, serif;
     font-weight:400;
-    font-size: clamp(34px, 4.8vw, 58px); 
+    font-size: clamp(34px, 4.8vw, 58px);
     letter-spacing:.05em;
     color:#2a2a2a;
   }
@@ -649,16 +716,16 @@
 
   /* ===== HEADER NAV ===== */
   .whead{
-  position: sticky;
-  top: 0;
-  
-  z-index: 9999;
+    position: sticky;
+    top: 0;
 
-  background: rgba(243,243,243,.82);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,.06);
-}
+    z-index: 9999;
+
+    background: rgba(243,243,243,.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,.06);
+  }
 
   .whead-wrap{
     max-width:1100px;
@@ -916,7 +983,6 @@
     font-size:14px;
     color:#9a9a9a;
     letter-spacing:0.08em;
-    /* ✅ заменили Montserrat -> Cera Pro */
     font-family: "Cera Pro", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     font-weight: 500;
   }
@@ -927,7 +993,6 @@
     align-items:center;
     justify-content:center;
     position:relative;
-    /* ✅ заменили Montserrat -> Cera Pro */
     font-family: "Cera Pro", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     font-weight: 500;
   }
@@ -998,27 +1063,26 @@
   .wtiming{ width:100%; padding: 30px 0; display:flex; justify-content:center; }
 
   .wtiming-wrap{
-  width:100%;
-  max-width:760px;
-  padding:60px 40px;
-  border-radius:24px;
-  overflow:hidden;
-  position:relative;
-  text-align:center;
+    width:100%;
+    max-width:760px;
+    padding:60px 40px;
+    border-radius:24px;
+    overflow:hidden;
+    position:relative;
+    text-align:center;
 
-  /* ✅ как в POLAROIDS */
-  background-image:
-    linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.25)),
-    var(--hero-bg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.25)),
+      var(--hero-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   .wtiming-wrap::before,
-.wtiming-wrap::after{
-  content:none;
-}
+  .wtiming-wrap::after{
+    content:none;
+  }
 
   .wtiming-title{ margin-bottom:26px; }
 
@@ -1092,9 +1156,9 @@
   }
   .wform-date{
     font-family: "Bella Script CYR", cursive;
-    font-size: 72px;      
+    font-size: 72px;
     color: var(--accent);
-    letter-spacing: 0.05em;  
+    letter-spacing: 0.05em;
     line-height: 1;
     margin: 0;
   }
@@ -1297,7 +1361,6 @@
     letter-spacing: .02em;
   }
 
- 
   /* 10) FINAL */
   .wfinal{
     width:100%;
@@ -1307,26 +1370,24 @@
   }
 
   .wfinal-wrap{
-  width:100%;
-  max-width:980px;          /* верни 980 или оставь 1200, но 980 выглядит ровнее */
-  margin: 0 auto;
-  padding: 20px 10px;
+    width:100%;
+    max-width:980px;
+    margin: 0 auto;
+    padding: 20px 10px;
 
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;  /* ✅ вместо space-between */
-  gap: 44px;
-}
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap: 44px;
+  }
 
-.wfinal-photos{
-  display:flex;
-  align-items:flex-start;
-  gap: 0;
-  flex: 0 0 460px;          /* ✅ резервируем место под 2 полароида */
-  justify-content:center;   /* ✅ центрируем фотки внутри своей колонки */
-}
-
-
+  .wfinal-photos{
+    display:flex;
+    align-items:flex-start;
+    gap: 0;
+    flex: 0 0 460px;
+    justify-content:center;
+  }
 
   .wfinal-pol{
     width: min(44vw, 220px);
@@ -1348,11 +1409,12 @@
   }
   .wfinal-img img{ width:100%; height:100%; object-fit:cover; }
 
-  ..wfinal-text{
-  flex: 1 1 auto;           /* ✅ текст забирает остаток */
-  min-width: 0;
-  text-align:left;
-}
+  /* ✅ FIX: была опечатка "..wfinal-text" */
+  .wfinal-text{
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align:left;
+  }
 
   .wfinal-love{
     margin-top:14px;
@@ -1362,37 +1424,32 @@
     line-height:0.5;
   }
 
-.wcont-card--withphoto{
-  display:flex;
-  align-items: stretch;
-  gap: 22px;                 /* ровно как твои отступы */
-  padding: 22px;             /* сохраняем 22px внутри карточки */
-  overflow: hidden;          /* чтобы не вылезало за скругление */
-}
+  .wcont-card--withphoto{
+    display:flex;
+    align-items: stretch;
+    gap: 22px;
+    padding: 22px;
+    overflow: hidden;
+  }
 
-/* левая часть */
-.wcont-card--withphoto .wcont-left{
-  flex: 1 1 auto;
-  min-width: 0;
-}
+  .wcont-card--withphoto .wcont-left{
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 
-/* правая часть под SVG */
-.wcont-card--withphoto .wcont-photo{
-  flex: 0 0 160px;           /* ширина правой колонки (можешь менять) */
-  display:flex;
-  align-items: stretch;       /* тянем контейнер по высоте */
-  justify-content: center;
-}
+  .wcont-card--withphoto .wcont-photo{
+    flex: 0 0 160px;
+    display:flex;
+    align-items: stretch;
+    justify-content: center;
+  }
 
-/* сам SVG */
-.wcont-card--withphoto .wcont-photo img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;        /* вписывается, не обрезается */
-  display:block;
-}
-
-
+  .wcont-card--withphoto .wcont-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display:block;
+  }
 
   /* ==========================
      RESPONSIVE
@@ -1537,6 +1594,58 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function(){
+
+  // ==========================
+  // ✅ 1) ON LOAD: FADE IN ALL + then HERO PHOTOS slide in
+  // ==========================
+  const hero = document.querySelector('.wpol');
+
+  // на старте: показываем hero-тексты плавно (через observer тоже можно, но тут быстрее ощущение "открытия")
+  // Добавим inview всем элементам hero, кроме фоток — сразу, а фотки чуть позже.
+  const heroFadeEls = document.querySelectorAll('.wpol [data-anim="fade"]');
+  heroFadeEls.forEach(el => el.classList.add('inview'));
+
+  // После короткого мгновения — выезд фоток слева/справа
+  if (hero) {
+    setTimeout(() => {
+      hero.classList.add('is-hero-photos');
+    }, 380);
+  }
+
+  // ==========================
+  // ✅ 2) SCROLL: reveal animations via IntersectionObserver
+  // ==========================
+  const animated = document.querySelectorAll('[data-anim]');
+
+  // Hero-элементы уже обработали, но пусть observer их тоже “видит” — он просто не навредит
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+
+      const el = entry.target;
+
+      // для не-hero элементов — просто показываем при попадании в экран
+      el.classList.add('inview');
+
+      // чтобы не триггерилось много раз
+      io.unobserve(el);
+    });
+  }, {
+    root: null,
+    threshold: 0.14,
+    rootMargin: "0px 0px -8% 0px"
+  });
+
+  animated.forEach(el => {
+    // hero fade уже показали, но можно не наблюдать их, чтобы не считать лишнее
+    // оставим наблюдение для остальных
+    if (el.closest('.wpol') && el.getAttribute('data-anim') === 'fade') return;
+    io.observe(el);
+  });
+
+  // ==========================
+  // ✅ 3) COUNTDOWN
+  // ==========================
   const target = new Date(2026, 5, 19, 15, 0, 0); // 19 июня 2026, 15:00 по местному времени пользователя
 
   const d1 = document.getElementById('cd-d1');
@@ -1547,45 +1656,47 @@ document.addEventListener("DOMContentLoaded", function(){
   const m1 = document.getElementById('cd-m1');
   const m2 = document.getElementById('cd-m2');
 
-  if(!d1 || !d2 || !d3 || !h1 || !h2 || !m1 || !m2) return;
+  if(d1 && d2 && d3 && h1 && h2 && m1 && m2){
+    function pad2(n){ return String(n).padStart(2,'0'); }
+    function pad3(n){ return String(n).padStart(3,'0'); }
 
-  function pad2(n){ return String(n).padStart(2,'0'); }
-  function pad3(n){ return String(n).padStart(3,'0'); }
+    function update(){
+      const now = new Date();
+      const diff = target - now;
 
-  function update(){
-    const now = new Date();
-    const diff = target - now;
+      if(diff <= 0){
+        d1.textContent = d2.textContent = d3.textContent = '0';
+        h1.textContent = h2.textContent = '0';
+        m1.textContent = m2.textContent = '0';
+        return;
+      }
 
-    if(diff <= 0){
-      d1.textContent = d2.textContent = d3.textContent = '0';
-      h1.textContent = h2.textContent = '0';
-      m1.textContent = m2.textContent = '0';
-      return;
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor(diff / 3600000) % 24;
+      const minutes = Math.floor(diff / 60000) % 60;
+
+      const d = pad3(days);
+      const h = pad2(hours);
+      const m = pad2(minutes);
+
+      d1.textContent = d[0];
+      d2.textContent = d[1];
+      d3.textContent = d[2];
+
+      h1.textContent = h[0];
+      h2.textContent = h[1];
+
+      m1.textContent = m[0];
+      m2.textContent = m[1];
     }
 
-    const days = Math.floor(diff / 86400000);
-    const hours = Math.floor(diff / 3600000) % 24;
-    const minutes = Math.floor(diff / 60000) % 60;
-
-    const d = pad3(days);
-    const h = pad2(hours);
-    const m = pad2(minutes);
-
-    d1.textContent = d[0];
-    d2.textContent = d[1];
-    d3.textContent = d[2];
-
-    h1.textContent = h[0];
-    h2.textContent = h[1];
-
-    m1.textContent = m[0];
-    m2.textContent = m[1];
+    update();
+    setInterval(update, 1000);
   }
 
-  update();
-  setInterval(update, 1000);
-
-  // ===== Mobile burger menu =====
+  // ==========================
+  // ✅ 4) Mobile burger menu
+  // ==========================
   const burger = document.querySelector('.wburger');
   const menu = document.getElementById('wmnav');
 
@@ -1613,6 +1724,7 @@ document.addEventListener("DOMContentLoaded", function(){
       if (!e.target.closest('.whead')) closeMenu();
     });
   }
+
 });
 </script>
 
