@@ -65,7 +65,7 @@
           </div>
           <div class="pol-cap">— планы на июнь?</div>
         </div>
-        
+
         <div class="pol pol-right">
           <div class="pol-img">
             <img
@@ -542,6 +542,10 @@
     --fs-contact-sub: clamp(15px, 0.9vw + 12px, 18px);
 
     --fs-nav: var(--fs-md);
+
+    /* ✅ единые токены для боковых отступов по твоим правилам */
+    --pad-mobile: 16px;
+    --pad-tablet: 24px;
 
     width:100%;
     max-width:100%;
@@ -1445,78 +1449,174 @@
     .wdress-text{ margin-bottom: 12px; }
   }
 
-  /* ✅ 1) Скругления исчезают, когда секции уже "в край" */
-  @media (max-width: 620px){
-    .wpol-wrap,
-    .wcount-wrap,
-    .wcont-wrap{
-      border-radius: 0 !important;
+  /* =====================================================
+     ✅ TABLET 768–1024: 24px для нужных блоков
+     и full-bleed + без скруглений для остальных
+     ===================================================== */
+  @media (min-width: 768px) and (max-width: 1024px){
+
+    /* 24px для: HEADER NAV */
+    .whead-wrap{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
+    .wmnav{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
+
+    /* 24px для: TEXTE INVITE, CALENDAR, PLACE, TIMING, DRESS CODE, GUEST FORM, FINAL */
+    .winvite{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
+
+    .wcal{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
+
+    .wplace{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
+
+    /* TIMING: “карточка” должна стоять с боковыми отступами 24px */
+    .wtiming{ padding-left: 0; padding-right: 0; }
+    .wtiming-wrap{
+      width: calc(100% - (var(--pad-tablet) * 2));
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* если скругления заметны у вложенных карточек на совсем узком */
-    .wcont-card,
-    .wcont-card--withphoto{
-      border-radius: 16px;
+    .wdress{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
+
+    .wform{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
+
+    .wfinal{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
+    .wfinal-wrap{ padding-left: 0; padding-right: 0; } /* чтобы ровно считалось от секции */
+
+    /* Остальные блоки: фон в край + без скруглений, контент внутри min 24px */
+    .wpol{ padding-left: 0; padding-right: 0; }
+    .wpol-wrap{
+      max-width: 100%;
+      border-radius: 0 !important;
+      padding-left: var(--pad-tablet);
+      padding-right: var(--pad-tablet);
+    }
+
+    .wcount{ padding-left: 0; padding-right: 0; }
+    .wcount-wrap{
+      max-width: 100%;
+      border-radius: 0 !important;
+      box-shadow: none;
+      padding-left: var(--pad-tablet);
+      padding-right: var(--pad-tablet);
+    }
+
+    .wcont{ padding-left: 0; padding-right: 0; }
+    .wcont-wrap{
+      max-width: 100%;
+      border-radius: 0 !important;
+      padding-left: var(--pad-tablet);
+      padding-right: var(--pad-tablet);
     }
   }
 
-  @media (max-width: 560px){
+  /* =====================================================
+     ✅ MOBILE <= 440: 16px для нужных блоков
+     и full-bleed + без скруглений для остальных
+     ===================================================== */
+  @media (max-width: 440px){
+
     #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 72px; }
 
+    /* 16px для: HEADER NAV */
     .whead-wrap{
-      padding: 12px 14px;
+      padding-left: var(--pad-mobile);
+      padding-right: var(--pad-mobile);
       justify-content: flex-end;
       gap: 12px;
     }
-
-    /* Bella Script CYR — заметнее на мобиле */
-    .wsite{
-      --fs-script-xl: clamp(60px, 12vw, 88px);
-      --fs-time: clamp(62px, 13vw, 96px);
-      --fs-hero: clamp(68px, 14vw, 110px);
-    }
-
     .whead-btn{ padding: 10px 12px; }
-    .wmnav{ padding: 0 14px 14px; }
-
-    /* ✅ 2) CALENDAR / FORM / TIMING всегда только до маржи */
-    .wpol{ padding:0; }
-    .wpol-wrap{ padding:42px 20px; max-width:100%; } /* скругления управляются выше */
-
-    .wcal{ padding:0 14px 34px; }
-    .wcal-card{
-      width:100%;
-      max-width:560px;
-      padding:24px 22px 28px;
-      border-radius:24px;
+    .wmnav{
+      padding-left: var(--pad-mobile);
+      padding-right: var(--pad-mobile);
+      padding-bottom: 14px;
     }
 
-    .wtiming{ padding:0; }
+    /* 16px для: TEXTE INVITE, CALENDAR, PLACE, TIMING, DRESS CODE, GUEST FORM, FINAL */
+    .winvite{ padding-left: var(--pad-mobile); padding-right: var(--pad-mobile); }
+
+    .wcal{
+      padding-left: var(--pad-mobile);
+      padding-right: var(--pad-mobile);
+      padding-bottom: 34px;
+    }
+    .wcal-card{
+      padding:24px 22px 28px;
+    }
+
+    .wplace{ padding-left: var(--pad-mobile); padding-right: var(--pad-mobile); }
+
+    /* TIMING: “карточка” с боковыми отступами 16px */
+    .wtiming{ padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; }
     .wtiming-wrap{
-      width:calc(100% - 28px);   /* строго до маржи */
+      width: calc(100% - (var(--pad-mobile) * 2));
       max-width:760px;
       padding:50px 20px;
-      border-radius:24px;        /* НЕ исчезает */
+      border-radius:24px;
       margin: 0 auto;
     }
 
-    .wform{ padding:0 14px; }
+    .wdress{ padding-left: var(--pad-mobile); padding-right: var(--pad-mobile); }
+
+    .wform{ padding-left: var(--pad-mobile); padding-right: var(--pad-mobile); }
     .wform-card{
-      width:100%;
-      max-width:760px;
       padding:26px 14px 14px;
-      border-radius:24px;        /* НЕ исчезает */
+      border-radius:24px;
       margin:0 auto;
     }
     .wform-iframe{ height:1100px; }
 
-    /* ✅ 1) COUNTDOWN уходит в край — скругления исчезают */
+    .wfinal{
+      padding-left: var(--pad-mobile);
+      padding-right: var(--pad-mobile);
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .wfinal-wrap{
+      max-width:100%;
+      padding: 44px 0 54px; /* нули по бокам, отступ уже на секции */
+      flex-direction: column;
+      align-items: stretch;
+      text-align:center;
+      gap: 22px;
+    }
+    .wfinal-photos{
+      flex: 0 0 auto;
+      width:100%;
+      margin:0;
+      justify-content:center;
+    }
+    .wfinal-text{ text-align:center; }
+    .wfinal-love, .wfinal-names{ text-align:center; }
+
+    /* Остальные блоки: фон в край + без скруглений, контент внутри min 16px */
+    .wpol{ padding:0; }
+    .wpol-wrap{
+      max-width:100%;
+      border-radius: 0 !important;
+      padding:42px var(--pad-mobile);
+    }
+
     .wcount{ padding:0; }
     .wcount-wrap{
       max-width:100%;
-      padding:44px 18px;
+      padding:44px var(--pad-mobile);
       box-shadow:none;
-      border-radius:0;
+      border-radius:0 !important;
+    }
+
+    .wcont{ padding:0; }
+    .wcont-wrap{
+      max-width:100%;
+      padding:50px var(--pad-mobile);
+      border-radius:0 !important;
+    }
+    .wcont-grid{ grid-template-columns: 1fr; }
+    .wcont-card--soft{ padding-top:76px; }
+
+    /* остальное “мобайл-улучшение” которое у тебя было */
+    .wsite{
+      --fs-script-xl: clamp(60px, 12vw, 88px);
+      --fs-time: clamp(62px, 13vw, 96px);
+      --fs-hero: clamp(68px, 14vw, 110px);
     }
 
     .wpol-row{ position:relative; gap:0; justify-content:center; align-items:flex-start; }
@@ -1526,36 +1626,8 @@
 
     .wpol-names{ gap:14px; margin-top:42px; }
     .wpol-names .plus{ transform: translateY(-3px); }
-
-    /* ✅ 1) CONTACTS уходит в край — скругления исчезают */
-    .wcont{ padding:0; }
-    .wcont-wrap{
-      max-width:100%;
-      padding:50px 20px;
-      border-radius:0;
-    }
-    .wcont-grid{ grid-template-columns: 1fr; }
-    .wcont-card--soft{ padding-top:76px; }
-
-    /* ✅ 4) FINAL: убираем пустое пространство при переходе на колонку */
-    .wfinal{ padding: 0; }
-    .wfinal-wrap{
-      max-width:100%;
-      padding: 44px 18px 54px;
-      flex-direction: column;
-      align-items: stretch;
-      text-align:center;
-      gap: 22px; /* было 28 — меньше воздуха */
-    }
-    .wfinal-photos{
-      flex: 0 0 auto;        /* убираем фиксированную ширину */
-      width:100%;
-      margin:0;
-      justify-content:center;
-    }
-    .wfinal-text{ text-align:center; }
-    .wfinal-love, .wfinal-names{ text-align:center; }
   }
+
 </style>
 
 <script>
