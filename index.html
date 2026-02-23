@@ -514,6 +514,7 @@
     --frame:#ffffff;
     --shadow:0 16px 34px rgba(0,0,0,.16);
     --accent:#c14a63;
+    --pad-min: 15px;
 
     --hero-bg:url("https://drive.google.com/thumbnail?id=1TiCwhbj88DsfT4pjp5q8iWbknVZoRSVS&sz=w2000");
 
@@ -1482,8 +1483,11 @@
     .wmnav{ padding: 0 15px 15px; } /* ✅ was 0 14px 14px */
 
     /* ✅ 2) CALENDAR / FORM / TIMING всегда только до маржи */
-    .wpol{ padding:0; }
-    .wpol-wrap{ padding:42px 20px; max-width:100%; } /* скругления управляются выше */
+    .wpol{ padding: 0 var(--pad-min); }
+.wpol-wrap{
+  max-width: 100%;
+  padding: 42px 20px; /* внутренний как был */
+}
 
     .wcal{ padding:0 15px 34px; } /* ✅ was 0 14px 34px */
     .wcal-card{
@@ -1513,13 +1517,13 @@
     .wform-iframe{ height:1100px; }
 
     /* ✅ 1) COUNTDOWN уходит в край — скругления исчезают */
-    .wcount{ padding:0; }
-    .wcount-wrap{
-      max-width:100%;
-      padding:44px 18px;
-      box-shadow:none;
-      border-radius:0;
-    }
+    .wcount{ padding: 0 var(--pad-min); }
+.wcount-wrap{
+  max-width: 100%;
+  padding: 44px 18px;
+  box-shadow:none;
+  border-radius:0;
+}
 
     .wpol-row{ position:relative; gap:0; justify-content:center; align-items:flex-start; }
     .pol{ width: min(46vw, 220px); padding: var(--pad-min); } /* ✅ keep min 15 */
@@ -1530,12 +1534,12 @@
     .wpol-names .plus{ transform: translateY(-3px); }
 
     /* ✅ 1) CONTACTS уходит в край — скругления исчезают */
-    .wcont{ padding:0; }
-    .wcont-wrap{
-      max-width:100%;
-      padding:50px 20px;
-      border-radius:0;
-    }
+    .wcont{ padding: 0 var(--pad-min); }
+.wcont-wrap{
+  max-width: 100%;
+  padding: 50px 20px;
+  border-radius:0;
+}
     .wcont-grid{ grid-template-columns: 1fr; }
     .wcont-card--soft{ padding-top:76px; }
 
