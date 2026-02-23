@@ -517,6 +517,9 @@
 
     --hero-bg:url("https://drive.google.com/thumbnail?id=1TiCwhbj88DsfT4pjp5q8iWbknVZoRSVS&sz=w2000");
 
+    /* ✅ MIN PADDING TOKEN */
+    --pad-min: 15px;
+
     /* ==========================
        FLUID TYPE TOKENS (единая шкала)
        ========================== */
@@ -665,8 +668,7 @@
   .whead-wrap{
     max-width:1100px;
     margin:0 auto;
-    padding: 10px 22px;
-
+    padding: 15px 22px; /* ✅ was 10px 22px */
     display:flex;
     align-items:center;
     justify-content:flex-end;
@@ -760,7 +762,7 @@
   .wmnav{
     max-width:1100px;
     margin: 0 auto;
-    padding: 0 22px 14px;
+    padding: 0 22px 15px; /* ✅ bottom min 15 */
   }
   .wmnav-card{
     background: rgba(255,255,255,.78);
@@ -771,7 +773,7 @@
     border-radius: 16px;
     box-shadow: 0 14px 34px rgba(0,0,0,.10);
 
-    padding: 10px;
+    padding: var(--pad-min); /* ✅ was 10px */
     display:flex;
     flex-direction:column;
     gap: 6px;
@@ -834,7 +836,7 @@
   .pol{
     width:min(270px, 42vw);
     background:var(--frame);
-    padding:14px 14px 12px;
+    padding: var(--pad-min); /* ✅ was 14/14/12 */
     border-radius:6px;
     box-shadow:var(--shadow);
   }
@@ -1350,7 +1352,7 @@
     width:100%;
     max-width:980px;
     margin: 0 auto;
-    padding: 20px 10px;
+    padding: 20px var(--pad-min); /* ✅ was 20px 10px */
 
     display:flex;
     align-items:center;
@@ -1369,7 +1371,7 @@
   .wfinal-pol{
     width: min(44vw, 220px);
     background: var(--frame);
-    padding: 12px 12px 10px;
+    padding: var(--pad-min); /* ✅ was 12/12/10 */
     border-radius: 6px;
     box-shadow: var(--shadow);
   }
@@ -1464,7 +1466,7 @@
     #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 72px; }
 
     .whead-wrap{
-      padding: 12px 14px;
+      padding: 15px 15px; /* ✅ was 12px 14px */
       justify-content: flex-end;
       gap: 12px;
     }
@@ -1477,13 +1479,13 @@
     }
 
     .whead-btn{ padding: 10px 12px; }
-    .wmnav{ padding: 0 14px 14px; }
+    .wmnav{ padding: 0 15px 15px; } /* ✅ was 0 14px 14px */
 
     /* ✅ 2) CALENDAR / FORM / TIMING всегда только до маржи */
     .wpol{ padding:0; }
     .wpol-wrap{ padding:42px 20px; max-width:100%; } /* скругления управляются выше */
 
-    .wcal{ padding:0 14px 34px; }
+    .wcal{ padding:0 15px 34px; } /* ✅ was 0 14px 34px */
     .wcal-card{
       width:100%;
       max-width:560px;
@@ -1493,18 +1495,18 @@
 
     .wtiming{ padding:0; }
     .wtiming-wrap{
-      width:calc(100% - 28px);   /* строго до маржи */
+      width:calc(100% - 30px);   /* ✅ was -28px (теперь маржа 15px) */
       max-width:760px;
       padding:50px 20px;
       border-radius:24px;        /* НЕ исчезает */
       margin: 0 auto;
     }
 
-    .wform{ padding:0 14px; }
+    .wform{ padding:0 15px; } /* ✅ was 0 14px */
     .wform-card{
       width:100%;
       max-width:760px;
-      padding:26px 14px 14px;
+      padding:26px 15px 15px; /* ✅ was 26px 14px 14px */
       border-radius:24px;        /* НЕ исчезает */
       margin:0 auto;
     }
@@ -1520,7 +1522,7 @@
     }
 
     .wpol-row{ position:relative; gap:0; justify-content:center; align-items:flex-start; }
-    .pol{ width: min(46vw, 220px); padding:12px 12px 10px; }
+    .pol{ width: min(46vw, 220px); padding: var(--pad-min); } /* ✅ keep min 15 */
     .pol-left{ transform: rotate(-7deg) translateY(-6px); z-index:1; }
     .pol-right{ transform: rotate(6deg) translateY(8px); margin-left:-18px; z-index:2; }
 
