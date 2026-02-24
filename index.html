@@ -499,7 +499,6 @@
     font-display: swap;
   }
 
-  /* ✅ FIX: убираем ЛЮБОЙ “второй скролл/ползунок” по X */
   html, body{
     margin:0;
     padding:0;
@@ -526,7 +525,7 @@
     --hero-bg:url("https://drive.google.com/thumbnail?id=1TiCwhbj88DsfT4pjp5q8iWbknVZoRSVS&sz=w2000");
 
     /* ==========================
-       FLUID TYPE TOKENS (единая шкала)
+       FLUID TYPE TOKENS
        ========================== */
     --fs-body: clamp(15px, 0.75vw + 12px, 18px);
     --fs-sm: clamp(12px, 0.45vw + 10px, 14px);
@@ -551,7 +550,6 @@
 
     --fs-nav: var(--fs-md);
 
-    /* ✅ единые токены для боковых отступов по твоим правилам */
     --pad-mobile: 16px;
     --pad-tablet: 24px;
 
@@ -570,7 +568,7 @@
   .wgap--sm{ height: 16px; }
 
   /* ==========================
-     ✅ ANIMATION: одинаковая везде (fade)
+     ANIMATION
      ========================== */
   [data-anim]{
     opacity: 0;
@@ -736,7 +734,7 @@
     transform: translateY(-1px);
   }
 
-  /* ✅ Language switch */
+  /* Language switch */
   .wlang{
     display:inline-flex;
     align-items:center;
@@ -1495,23 +1493,19 @@
   }
 
   /* =====================================================
-     ✅ TABLET 768–1024: 24px для нужных блоков
-     и full-bleed + без скруглений для остальных
+     TABLET 768–1024:
      ===================================================== */
   @media (min-width: 768px) and (max-width: 1024px){
 
-    /* 24px для: HEADER NAV */
     .whead-wrap{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
     .wmnav{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
 
-    /* 24px для: TEXTE INVITE, CALENDAR, PLACE, TIMING, DRESS CODE, GUEST FORM, FINAL */
     .winvite{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
 
     .wcal{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
 
     .wplace{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
 
-    /* TIMING: “карточка” должна стоять с боковыми отступами 24px */
     .wtiming{ padding-left: 0; padding-right: 0; }
     .wtiming-wrap{
       width: calc(100% - (var(--pad-tablet) * 2));
@@ -1524,9 +1518,8 @@
     .wform{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
 
     .wfinal{ padding-left: var(--pad-tablet); padding-right: var(--pad-tablet); }
-    .wfinal-wrap{ padding-left: 0; padding-right: 0; } /* чтобы ровно считалось от секции */
+    .wfinal-wrap{ padding-left: 0; padding-right: 0; }
 
-    /* Остальные блоки: фон в край + без скруглений, контент внутри min 24px */
     .wpol{ padding-left: 0; padding-right: 0; }
     .wpol-wrap{
       max-width: 100%;
@@ -1554,14 +1547,12 @@
   }
 
   /* =====================================================
-     ✅ MOBILE <= 440: 16px для нужных блоков
-     и full-bleed + без скруглений для остальных
+     MOBILE <= 440
      ===================================================== */
   @media (max-width: 440px){
 
     #invite, #place, #timing, #dress, #rsvp, #contacts { scroll-margin-top: 72px; }
 
-    /* 16px для: HEADER NAV */
     .whead-wrap{
       padding-left: var(--pad-mobile);
       padding-right: var(--pad-mobile);
@@ -1574,8 +1565,6 @@
       padding-right: var(--pad-mobile);
       padding-bottom: 14px;
     }
-
-    /* 16px для: TEXTE INVITE, CALENDAR, PLACE, TIMING, DRESS CODE, GUEST FORM, FINAL */
     .winvite{ padding-left: var(--pad-mobile); padding-right: var(--pad-mobile); }
 
     .wcal{
@@ -1589,7 +1578,6 @@
 
     .wplace{ padding-left: var(--pad-mobile); padding-right: var(--pad-mobile); }
 
-    /* TIMING: “карточка” с боковыми отступами 16px */
     .wtiming{ padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; }
     .wtiming-wrap{
       width: calc(100% - (var(--pad-mobile) * 2));
@@ -1617,7 +1605,7 @@
     }
     .wfinal-wrap{
       max-width:100%;
-      padding: 44px 0 54px; /* нули по бокам, отступ уже на секции */
+      padding: 44px 0 54px; 
       flex-direction: column;
       align-items: stretch;
       text-align:center;
@@ -1632,7 +1620,6 @@
     .wfinal-text{ text-align:center; }
     .wfinal-love, .wfinal-names{ text-align:center; }
 
-    /* Остальные блоки: фон в край + без скруглений, контент внутри min 16px */
     .wpol{ padding:0; }
     .wpol-wrap{
       max-width:100%;
@@ -1657,7 +1644,6 @@
     .wcont-grid{ grid-template-columns: 1fr; }
     .wcont-card--soft{ padding-top:22px; }
 
-    /* остальное “мобайл-улучшение” которое у тебя было */
     .wsite{
       --fs-script-xl: clamp(60px, 12vw, 88px);
       --fs-time: clamp(62px, 13vw, 96px);
@@ -1672,7 +1658,6 @@
     .wpol-names{ gap:14px; margin-top:42px; }
     .wpol-names .plus{ transform: translateY(-3px); }
 
-    /* language switch a bit smaller on very small screens */
     .wlang{ padding: 7px 9px; }
   }
 
@@ -1682,7 +1667,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
   // ==========================
-  // ✅ i18n (RU/EN) — без автодетекта и без запоминания
+  // i18n (RU/EN)
   // ==========================
   const translations = {
     ru: {
@@ -1875,7 +1860,7 @@ if (iframe && dict["rsvp.form_url"]) {
   applyTranslations("ru");
 
   // ==========================
-  // ✅ Fade-in on scroll (одинаково везде)
+  // Fade-in on scroll
   // ==========================
   const animated = document.querySelectorAll('[data-anim]');
 
