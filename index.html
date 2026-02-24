@@ -85,10 +85,10 @@
       </div>
 
       <div class="wpol-names" aria-label="Names" data-anim="fade">
-        <div class="name">СЕРГЕЙ</div>
-        <div class="plus">+</div>
-        <div class="name">ЕЛИЗАВЕТА</div>
-      </div>
+  <div class="name" data-i18n="hero.name1">СЕРГЕЙ</div>
+  <div class="plus">+</div>
+  <div class="name" data-i18n="hero.name2">ЕЛИЗАВЕТА</div>
+</div>
 
       <div class="wpol-date-line" aria-label="Wedding date (mobile)" data-anim="fade">
         19 / 06 / 26
@@ -335,7 +335,7 @@
       <div class="wcont-grid wcont-grid--top">
 
         <div class="wcont-card" data-anim="fade">
-          <div class="wcont-name">Елизавета</div>
+          <div class="wcont-name" data-i18n="contacts.name.elizaveta">Елизавета</div>
 
           <a class="wcont-row" href="https://t.me/kapeliza" target="_blank" rel="noopener noreferrer">
             <span class="wcont-ico" aria-hidden="true">
@@ -357,7 +357,7 @@
         </div>
 
         <div class="wcont-card" data-anim="fade">
-          <div class="wcont-name">Сергей</div>
+          <div class="wcont-name" data-i18n="contacts.name.sergei">Сергей</div>
 
           <a class="wcont-row" href="https://t.me/glukhovs" target="_blank" rel="noopener noreferrer">
             <span class="wcont-ico" aria-hidden="true">
@@ -376,7 +376,7 @@
 
         <div class="wcont-card wcont-card--soft wcont-card--withphoto" data-anim="fade">
           <div class="wcont-left">
-            <div class="wcont-name">Алексей</div>
+            <div class="wcont-name" data-i18n="contacts.name.alexey">Алексей</div>
 
             <a class="wcont-row" href="https://t.me/kulpinaleksey" target="_blank" rel="noopener noreferrer">
               <span class="wcont-ico" aria-hidden="true">
@@ -404,7 +404,7 @@
 
         <div class="wcont-card wcont-card--soft wcont-card--withphoto" data-anim="fade">
           <div class="wcont-left">
-            <div class="wcont-name">Имя</div>
+            <div class="wcont-name" data-i18n="contacts.name.coordinator">Имя</div>
 
             <a class="wcont-row" href="https://t.me/kapeliza" target="_blank" rel="noopener noreferrer">
               <span class="wcont-ico" aria-hidden="true">
@@ -1682,12 +1682,18 @@ document.addEventListener("DOMContentLoaded", function(){
   // ==========================
   const translations = {
     ru: {
+      "hero.name1": "СЕРГЕЙ",
+"hero.name2": "ЕЛИЗАВЕТА",
       "nav.invite": "Наша свадьба",
       "nav.place": "Место проведения",
       "nav.timing": "Тайминг",
       "nav.dress": "Дресс-код",
       "nav.contacts": "Контакты",
       "nav.rsvp_btn": "Подтвердить присутствие",
+      "contacts.name.elizaveta": "Елизавета",
+"contacts.name.sergei": "Сергей",
+"contacts.name.alexey": "Алексей",
+"contacts.name.coordinator": "Имя",
 
       "hero.top": "Мы женимся!",
       "hero.cap_left": "— планы на июнь?",
@@ -1740,12 +1746,19 @@ document.addEventListener("DOMContentLoaded", function(){
     },
 
     en: {
+      "hero.name1": "SERGEI",
+"hero.name2": "ELIZAVETA",
       "nav.invite": "Our Wedding",
       "nav.place": "Venue",
       "nav.timing": "Schedule",
       "nav.dress": "Dress Code",
       "nav.contacts": "Contacts",
       "nav.rsvp_btn": "RSVP",
+
+      "contacts.name.elizaveta": "Elizaveta",
+"contacts.name.sergei": "Sergei",
+"contacts.name.alexey": "Alexey",
+"contacts.name.coordinator": "Name",
 
       "hero.top": "We’re getting married!",
       "hero.cap_left": "— plans for June?",
@@ -1794,7 +1807,7 @@ document.addEventListener("DOMContentLoaded", function(){
       "contacts.sub": "If you have any questions about the event, feel free to reach out:",
 
       "final.top": "See you soon!",
-      "final.love": "With love,<br>Elizaveta & Sergey!"
+      "final.love": "With love,<br>Sergei & Elizaveta !"
     }
   };
 
